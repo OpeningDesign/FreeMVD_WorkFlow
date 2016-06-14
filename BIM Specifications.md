@@ -18,11 +18,11 @@ Objects should have a name that allows a human being to understand what it is, i
 
 All IFC objects have a **Name** and a **Description**. Any of them can be used for this purpose.
 
-This rules mainly applies to [IfcProduct](http://www.buildingsmart-tech.org/ifc/IFC4x1/html/schema/ifckernel/lexical/ifcproduct.htm) entities in IFC: They are the final, individual objects that compose a building. For example, a wall, a column, a chair, a window. It doesn't consider objects that are part of a final product, when they are composed of multiple objects, for example a leg of a chair or a brick of a wall. It is sufficient to have the chair correctly named, not necessarily each component of the chair.
+This rule mainly applies to [IfcProduct](http://www.buildingsmart-tech.org/ifc/IFC4x1/html/schema/ifckernel/lexical/ifcproduct.htm) entities in IFC: They are the final, individual objects that compose a building. For example, a wall, a column, a chair, a window. It doesn't consider objects that are part of a final product, when they are composed of multiple objects, for example a leg of a chair or a brick of a wall. It is sufficient to have the chair correctly named, not necessarily each component of the chair.
 
 | Support                  | Import | Export |
 | ------------------------ | ------ | ------ |
-| FreeCAD                  | IFC name translated to FreeCAD object name, IFC description not imported into FreeCAD | FreeCAD object name exported as IFC name, FreeCAD object description, if present, exported as IFC description |
+| FreeCAD                  | IFC name translated to FreeCAD object name, IFC description imported into FreeCAD object description if available | FreeCAD object name exported as IFC name, FreeCAD object description, if present, exported as IFC description |
 | Revit                    |        |        |
 
 Test file: [wall_with_name_and_description.ifc](Specifications test files/wall_with_name_and_description.ifc)
@@ -33,7 +33,7 @@ Grouping objects using [IfcGroups](http://www.buildingsmart-tech.org/ifc/IFC4x1/
 
 | Support                  | Import | Export |
 | ------------------------ | ------ | ------ |
-| FreeCAD                  | IFC groups translated to FreeCAD groups. Nesting is respected. | FreeCAD groups are exported to IFC groups, but groups are not part of IfcBuildingStoreys. |
+| FreeCAD                  | IFC groups translated to FreeCAD groups. Nesting is respected. | FreeCAD groups are exported to IFC groups, but groups are not part of IfcBuildingStoreys (**Problem**: IfcGroups cannot be nested into IfcBuildingStoreys) |
 | Revit                    |        |        |
 
 Test file: [wall_in_nested_groups.ifc](Specifications test files/wall_in_nested_groups.ifc)
