@@ -22,10 +22,10 @@ This rule mainly applies to [IfcProduct](http://www.buildingsmart-tech.org/ifc/I
 
 | Support                  | Import | Export |
 | ------------------------ | ------ | ------ |
-| FreeCAD                  | IFC name translated to FreeCAD object name, IFC description imported into FreeCAD object description if available | FreeCAD object name exported as IFC name, FreeCAD object description, if present, exported as IFC description |
-| Revit                    |        |        |
+| FreeCAD                  | IFC name translated to FreeCAD object **name** ```('My test wall')```, IFC **description** ```('This is a test wall to check rule number one')``` imported into FreeCAD object description if available | FreeCAD object name exported as IFC name, FreeCAD object description, if present, exported as IFC description |
+| Revit                    |Upon import, **name** and **description** is not accessible to modify from Revit UI. see Screenshots [1](Specifications test files/wall_with_name_and_description/Revit Properties_1.png) & [2](Specifications test files/wall_with_name_and_description/Revit Properties_2.png)      |  **Name** and **description** exports out correctly.      |
 
-Test file: [wall_with_name_and_description.ifc](Specifications test files/wall_with_name_and_description.ifc)
+Test folder: [wall_with_name_and_description.ifc](Specifications test files/wall_with_name_and_description)
 
 ### 02. All objects should be grouped in meaningful ways
 
