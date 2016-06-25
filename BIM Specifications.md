@@ -34,6 +34,6 @@ Grouping objects using [IfcGroups](http://www.buildingsmart-tech.org/ifc/IFC4x1/
 | Support                  | Import | Export |
 | ------------------------ | ------ | ------ |
 | FreeCAD                  | IFC groups translated to FreeCAD groups. Nesting is respected. | FreeCAD groups are exported to IFC groups, but groups are not part of IfcBuildingStoreys (**Problem**: IfcGroups cannot be nested into IfcBuildingStoreys) |
-| Revit                    |   Wall(s) did not import     |  nothing to export |
+| Revit                    |   Not sure what to look for in Revit.  Nothing was grouped     |  not sure. |
 
 Test file: [wall_in_nested_groups](Specifications test files/wall_in_nested_groups)
