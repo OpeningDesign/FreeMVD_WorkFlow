@@ -25,7 +25,7 @@ This rule mainly applies to [IfcProduct](http://www.buildingsmart-tech.org/ifc/I
 | FreeCAD                  | IFC name translated to FreeCAD object **name** ```('My test wall')```, IFC **description** ```('This is a test wall to check rule number one')``` imported into FreeCAD object description if available | FreeCAD object name exported as IFC name, FreeCAD object description, if present, exported as IFC description |
 | Revit                    |Upon import, **name** and **description** is not accessible to modify from Revit UI. see Screenshots [1](Specifications test files/wall_with_name_and_description/Revit Properties_1.png) & [2](Specifications test files/wall_with_name_and_description/Revit Properties_2.png)      |  **Name** and **description** exports out correctly.      |
 
-Test folder: [wall_with_name_and_description.ifc](Specifications test files/wall_with_name_and_description)
+Test folder: [wall_with_name_and_description](Specifications test files/wall_with_name_and_description)
 
 ### 02. All objects should be grouped in meaningful ways
 
@@ -34,6 +34,6 @@ Grouping objects using [IfcGroups](http://www.buildingsmart-tech.org/ifc/IFC4x1/
 | Support                  | Import | Export |
 | ------------------------ | ------ | ------ |
 | FreeCAD                  | IFC groups translated to FreeCAD groups. Nesting is respected. | FreeCAD groups are exported to IFC groups, but groups are not part of IfcBuildingStoreys (**Problem**: IfcGroups cannot be nested into IfcBuildingStoreys) |
-| Revit                    |        |        |
+| Revit                    |   Wall(s) did not import     |  nothing to export |
 
-Test file: [wall_in_nested_groups.ifc](Specifications test files/wall_in_nested_groups.ifc)
+Test file: [wall_in_nested_groups](Specifications test files/wall_in_nested_groups)
