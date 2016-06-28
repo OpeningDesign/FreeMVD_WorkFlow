@@ -12,9 +12,9 @@ The correct implementation of these rules implies a good understanding of the [I
 
 ## Rules
 
-### 01. All objects and materials must have a human-readable name or description
+### 01. All objects and materials should have a human-readable name or description
 
-Objects should have a name that allows a human being to understand what it is, in case the software that reads the IFC file fails to recognize or categorize it appropriately. For example, bad names are "Object00014", "Material43", "Wall034". Good names are "Kitchen chair", "Grey concrete", "East living room wall"
+Objects should have a name that allows a human being to understand what it is, in case the software that reads the IFC file fails to recognize or categorize it appropriately. For example, bad names are "Object00014", "Material43". Good names are "Kitchen chair", "Grey concrete", "East living room wall"
 
 All IFC objects have a **Name** and a **Description**. Any of them can be used for this purpose.
 
