@@ -52,9 +52,16 @@ Test folder: [wall_in_nested_groups](Specifications test files/wall_in_nested_gr
 
 It is fundamental for the author of an IFC file to be fully aware of what has been included in that file. Therefore, it is essential to be able to vertify the contents of the file in a neutral manner (independent of the application that exported it). It should also be possible for other people to easily open that file, and verify its contents, independently of the application used to import it.
 
+**Items that should be checked on opening an IFC file for verification**:
+
+* The application used for verification reports no error on opening the file
+* The total number of objects informed by the application used for verification matches the number of objects informed by the application used for exporting
+* All the geometry is there when inspecting the 3D model in the application used for verification
+* All the geometry is at its correct location when inspecting the 3D model in the application used for verification
+
 **To be developed:**
 
-* For now the only reliable one I know that is open-source and cross-platform is [IfcPlusPlus](http://www.ifcplusplus.com/) which does a fairly good job. If it prints no error, and all objects appear in place, it generally means the data is of very good quality. [BimServer](http://bimserver.org/) might become a perfect option once it has good data validation plugins.
+* For now the only reliable one I know that is open-source and cross-platform is [IfcPlusPlus](http://www.ifcplusplus.com/) which does a fairly good job. If it prints no error, and all objects appear in place, it generally means the data is of very good quality. [BimServer](http://bimserver.org/) might become a perfect option once it has good data validation plugins. IfcPlusPlus doesn't support IfcAdvancedBrep (Still not checked with BimServer).
 
 ### 04. Use geometry types that makes objects editable in all applications
 
