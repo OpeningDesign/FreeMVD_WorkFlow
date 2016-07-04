@@ -48,11 +48,15 @@ Test folder: [wall_in_nested_groups](Specifications test files/wall_in_nested_gr
 
 ### 03. Use free/open-source IFC applications to validate the data inside IFC files.
 
-**To be developed** - For now the only reliable one I know that is open-source and cross-platform is [IfcPlusPlus](http://www.ifcplusplus.com/) which does a fairly good job. If it prints no error, and all objects appear in place, it generally means the data is of very good quality. [BimServer](http://bimserver.org/) might become a perfect option once it has good data validation plugins.
+**To be developed**
+
+* For now the only reliable one I know that is open-source and cross-platform is [IfcPlusPlus](http://www.ifcplusplus.com/) which does a fairly good job. If it prints no error, and all objects appear in place, it generally means the data is of very good quality. [BimServer](http://bimserver.org/) might become a perfect option once it has good data validation plugins.
 
 ### 04. Use geometry types that makes objects editable in all applications
 
-**To be developed** - Some geometry types, although they import correctly in all applications, are sometimes not editable (the concept of what editable means needs to be developed as well). This item should identify the geometry types that are "safe".
+**To be developed**
+
+* Some geometry types, although they import correctly in all applications, are sometimes not editable (the concept of what editable means needs to be developed as well). This item should identify the geometry types that are "safe".
 
 **To be tested:**
 
