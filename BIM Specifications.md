@@ -24,6 +24,7 @@ This rule mainly applies to [IfcProduct](http://www.buildingsmart-tech.org/ifc/I
 | ------------------------ | ------ | ------ | ------ |
 | FreeCAD                  |[Label property](http://www.freecadweb.org/wiki/index.php?title=Property_editor) (all FreeCAD objects), Description property (only [Arch objects](http://www.freecadweb.org/wiki/index.php?title=Arch_Module))| IFC name translated to FreeCAD object **label** ```('My test wall')```, IFC **description** ```('This is a test wall to check rule number one')``` imported into FreeCAD object description if available | FreeCAD object label exported as IFC name, FreeCAD object description, if present, exported as IFC description |
 | Revit                    |???|Upon import, **name** and **description** is not accessible to modify from Revit UI. see Screenshots [1](Specifications test files/wall_with_name_and_description/Revit Properties_1.png) & [2](Specifications test files/wall_with_name_and_description/Revit Properties_2.png)      |  **Name** and **description** exports out correctly.      |
+| ArchiCAD | ??? | ??? | ??? |
 
 Test folder: [wall_with_name_and_description](Specifications test files/wall_with_name_and_description)
 
@@ -39,6 +40,7 @@ Grouping objects using [IfcGroups](http://www.buildingsmart-tech.org/ifc/IFC4x1/
 | ------------------------ | ------ | ------ | ------ |
 | FreeCAD                  |[Groups](http://www.freecadweb.org/wiki/index.php?title=Group)| IFC groups translated to FreeCAD groups. Nesting is respected. | FreeCAD groups are exported to IFC groups, but groups are not part of IfcBuildingStoreys (**Problem**: IfcGroups cannot be nested into IfcBuildingStoreys) |
 | Revit                    |[Groups of Elements](https://knowledge.autodesk.com/support/revit-products/learn-explore/caas/CloudHelp/cloudhelp/2016/ENU/Revit-Model/files/GUID-52612B0F-43AA-47AF-A76C-BB0E3DD24E34-htm.html)|   Does not import IFCgroups into Revit Groups     |  Yes, exports ```#253= IFCGROUP('2wfBgyl9H71872FVeaZPs0',#41,'Model Group:Test Revit Group:149951',$,'Model Group:Test Revit Group');``` |
+| ArchiCAD | ??? | ??? | ??? |
 
 Test folder: [wall_in_nested_groups](Specifications test files/wall_in_nested_groups)
 
@@ -48,13 +50,15 @@ Test folder: [wall_in_nested_groups](Specifications test files/wall_in_nested_gr
 
 ### 03. Use free/open-source IFC applications to validate the data inside IFC files.
 
-**To be developed**
+It is fundamental for the author of an IFC file to be fully aware of what has been included in that file. Therefore, it is essential to be able to vertify the contents of the file in a neutral manner (independent of the application that exported it). It should also be possible for other people to easily open that file, and verify its contents, independently of the application used to import it.
+
+**To be developed:**
 
 * For now the only reliable one I know that is open-source and cross-platform is [IfcPlusPlus](http://www.ifcplusplus.com/) which does a fairly good job. If it prints no error, and all objects appear in place, it generally means the data is of very good quality. [BimServer](http://bimserver.org/) might become a perfect option once it has good data validation plugins.
 
 ### 04. Use geometry types that makes objects editable in all applications
 
-**To be developed**
+**To be developed:**
 
 * Some geometry types, although they import correctly in all applications, are sometimes not editable (the concept of what editable means needs to be developed as well). This item should identify the geometry types that are "safe".
 
