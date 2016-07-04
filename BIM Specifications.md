@@ -27,6 +27,10 @@ This rule mainly applies to [IfcProduct](http://www.buildingsmart-tech.org/ifc/I
 
 Test folder: [wall_with_name_and_description](Specifications test files/wall_with_name_and_description)
 
+**To do:**
+
+* Check where name and description are stored in Revit, maybe that could be accessed by dynamo or something. See if Revit doesn't provide any alternative (different ways to "label" objects)
+
 ### 02. All objects should be grouped in meaningful ways
 
 Grouping objects using [IfcGroups](http://www.buildingsmart-tech.org/ifc/IFC4x1/html/schema/ifckernel/lexical/ifcgroup.htm) allows a human being to clearly recognize objects as being part of a same area, funcion or category. Groups can be nested inside other groups. A same object cannot be part of several groups.
@@ -37,3 +41,23 @@ Grouping objects using [IfcGroups](http://www.buildingsmart-tech.org/ifc/IFC4x1/
 | Revit                    |[Groups of Elements](https://knowledge.autodesk.com/support/revit-products/learn-explore/caas/CloudHelp/cloudhelp/2016/ENU/Revit-Model/files/GUID-52612B0F-43AA-47AF-A76C-BB0E3DD24E34-htm.html)|   Does not import IFCgroups into Revit Groups     |  Yes, exports ```#253= IFCGROUP('2wfBgyl9H71872FVeaZPs0',#41,'Model Group:Test Revit Group:149951',$,'Model Group:Test Revit Group');``` |
 
 Test folder: [wall_in_nested_groups](Specifications test files/wall_in_nested_groups)
+
+**To do:**
+
+* IFC offers two different "structures" to group and organize contents: [space-related](http://www.buildingsmart-tech.org/ifc/IFC4x1/html/schema/ifcproductextension/lexical/ifcrelcontainedinspatialstructure.htm) (Building->BuildingStorey->Zone->Space) and non-space-related ([Group](http://www.buildingsmart-tech.org/ifc/IFC4x1/html/schema/ifckernel/lexical/ifcgroup.htm) ). These two structures are fully independent and cannot be combined (you cannot add a group to a spatial structure element). Check if using IFC Groups is the most adequate form, and if it wouldn't be better to switch to a full space-related system.
+
+### 03. Use free/open-source IFC applications to validate the data inside IFC files.
+
+**To be developed** - For now the only reliable one I know that is open-source and cross-platform is [IfcPlusPlus](http://www.ifcplusplus.com/) which does a fairly good job. If it prints no error, and all objects appear in place, it generally means the data is of very good quality. [BimServer](http://bimserver.org/) might become a perfect option once it has good data validation plugins.
+
+### 04. Use geometry types that makes objects editable in all applications
+
+**To be developed** - Some geometry types, although they import correctly in all applications, are sometimes not editable (the concept of what editable means needs to be developed as well). This item should identify the geometry types that are "safe".
+
+**To be tested:**
+
+* Vertical (Z-axis) [extrusions](http://www.buildingsmart-tech.org/ifc/IFC4/final/html/schema/ifcgeometricmodelresource/lexical/ifcextrudedareasolid.htm) of any profile (straight/only lines, complex/curved, and predefined types)
+* Arbitrary (any direction) extrusions of any profile
+* [Booleans](http://www.buildingsmart-tech.org/ifc/IFC4/final/html/schema/ifcgeometricmodelresource/lexical/ifcbooleanresult.htm) (unions, differences, intersections)
+* [Faceted Brep](http://www.buildingsmart-tech.org/ifc/IFC4/final/html/schema/ifcgeometricmodelresource/lexical/ifcfacetedbrep.htm) shapes
+* [Advanced Brep](http://www.buildingsmart-tech.org/ifc/IFC4/final/html/schema/ifcgeometricmodelresource/lexical/ifcadvancedbrep.htm) shapes
