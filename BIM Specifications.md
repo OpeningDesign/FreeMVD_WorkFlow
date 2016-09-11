@@ -25,7 +25,7 @@ The correct implementation of these rules implies a good understanding of the [I
 | Revit                    |[Walls](https://knowledge.autodesk.com/support/revit-products/learn-explore/caas/CloudHelp/cloudhelp/2016/ENU/Revit-Model/files/GUID-9A9F7D00-A6A1-4E17-8C74-0965FDA5E007-htm.html)|from FreeCAD, the wall imports as a in-place family, that is, not an intelligent wall|Yes|
 | ArchiCAD 					| x | x | x |
 
-Test folder: [wall_with_name_and_description](Specifications test files/Wall)
+Test folder: [Wall](Specifications test files/Wall)
 
 ---
 
@@ -43,7 +43,7 @@ This rule mainly applies to [IfcProduct](http://www.buildingsmart-tech.org/ifc/I
 | Revit                    |???|Upon import, **name** and **description** is not accessible to modify from Revit UI. see Screenshots [1](Specifications test files/wall_with_name_and_description/Revit Properties_1.png) & [2](Specifications test files/wall_with_name_and_description/Revit Properties_2.png)      |  **Name** and **description** exports out correctly.      |
 | ArchiCAD | ??? | ??? | ??? |
 
-Test folder: [wall_with_name_and_description](Specifications test files/Name and Description)
+Test folder: [Name and Description](Specifications test files/Name and Description)
 
 **To do:**
 
@@ -61,7 +61,7 @@ Grouping objects using [IfcGroups](http://www.buildingsmart-tech.org/ifc/IFC4x1/
 | Revit                    |[Groups of Elements](https://knowledge.autodesk.com/support/revit-products/learn-explore/caas/CloudHelp/cloudhelp/2016/ENU/Revit-Model/files/GUID-52612B0F-43AA-47AF-A76C-BB0E3DD24E34-htm.html)|   Does not import IFCgroups into Revit Groups     |  Yes, exports ```#253= IFCGROUP('2wfBgyl9H71872FVeaZPs0',#41,'Model Group:Test Revit Group:149951',$,'Model Group:Test Revit Group');``` |
 | ArchiCAD | ??? | ??? | ??? |
 
-Test folder: [wall_in_nested_groups](Specifications test files/Nested Groups)
+Test folder: [Nested Groups](Specifications test files/Nested Groups)
 
 **To do:**
 
