@@ -16,6 +16,21 @@ The correct implementation of these rules implies a good understanding of the [I
 
 ---
 
+### **Model Lines: ** Lines in 3-dimensional space
+
+
+
+| Platform                 |Native Functionality| Import | Export |
+| --- | --- | --- | --- |
+| FreeCAD                  |x| x| x |
+| Revit                    |[Model Lines](https://knowledge.autodesk.com/support/revit-products/learn-explore/caas/CloudHelp/cloudhelp/2016/ENU/Revit-Model/files/GUID-24A8763F-D8DD-4579-9CF3-BBC02EF3A314-htm.html)|PASSES -  Name, Color, & Pattern, FAILS - Weight|Had to use an MVD that supports the export of lines (Coordination View 2.0 does not)|
+| ArchiCAD 					| x | x | x |
+
+
+Test folder: [Model Lines](Specifications test files/Model Lines)
+
+---
+
 ### **Wall**
 
 
