@@ -16,13 +16,13 @@ The correct implementation of these rules implies a good understanding of the [I
 
 ---
 
-### **Model Lines: ** Lines in 3-dimensional space
+### **Model Lines:** Lines in 3-dimensional space
 
 
 
 | Platform                 |Native Functionality| Import | Export |
 | --- | --- | --- | --- |
-| FreeCAD                  |x| x| x |
+| FreeCAD                  |Any [Part-based](http://www.freecadweb.org/wiki/index.php?title=Part_Module) object which contains edges and no faces, such as [Draft](http://www.freecadweb.org/wiki/index.php?title=Draft_Module) or [Sketch](http://www.freecadweb.org/wiki/index.php?title=Sketcher_Module) objects| [IfcAnnotation](http://www.buildingsmart-tech.org/ifc/IFC4/final/html/schema/ifcproductextension/lexical/ifcannotation.htm) objects are imported as simple, non-parametric Part objects. Color and line style currently not supported. | Part-based objects with edges and no faces are exported as [IfcAnnotation](http://www.buildingsmart-tech.org/ifc/IFC4/final/html/schema/ifcproductextension/lexical/ifcannotation.htm) |
 | Revit                    |[Model Lines](https://knowledge.autodesk.com/support/revit-products/learn-explore/caas/CloudHelp/cloudhelp/2016/ENU/Revit-Model/files/GUID-24A8763F-D8DD-4579-9CF3-BBC02EF3A314-htm.html)|PASSES -  Name, Color, & Pattern, FAILS - Weight|Had to use an MVD that supports the export of lines (Coordination View 2.0 does not)|
 | ArchiCAD 					| x | x | x |
 
@@ -42,9 +42,14 @@ Test folder: [Model Lines](Specifications test files/Model Lines)
 
 Test folder: [Wall](Specifications test files/Wall)
 
+**To do:**
+
+* Check if there is any possibility to recreate a working family from an IFC file
+
 ---
 
 ### **Name and Description:** All objects and materials should have a human-readable name or description
+
 
 Objects should have a name that allows a human being to understand what it is, in case the software that reads the IFC file fails to recognize or categorize it appropriately. For example, bad names are "Object00014", "Material43". Good names are "Kitchen chair", "Grey concrete", "East living room wall"
 
@@ -68,6 +73,7 @@ Test folder: [Name and Description](Specifications test files/Name and Descripti
 
 ### **Nested Groups:** All objects should be grouped in meaningful ways
 
+
 Grouping objects using [IfcGroups](http://www.buildingsmart-tech.org/ifc/IFC4x1/html/schema/ifckernel/lexical/ifcgroup.htm) allows a human being to clearly recognize objects as being part of a same area, funcion or category. Groups can be nested inside other groups. A same object cannot be part of several groups.
 
 | Platform                  |Native Functionality| Import | Export |
@@ -86,6 +92,8 @@ Test folder: [Nested Groups](Specifications test files/Nested Groups)
 ---
 
 ## Tools
+
+
 Use free/open-source IFC applications to validate the data inside IFC files.
 
 It is fundamental for the author of an IFC file to be fully aware of what has been included in that file. Therefore, it is essential to be able to vertify the contents of the file in a neutral manner (independent of the application that exported it). It should also be possible for other people to easily open that file, and verify its contents, independently of the application used to import it.
