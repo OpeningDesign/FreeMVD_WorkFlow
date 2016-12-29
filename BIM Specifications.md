@@ -31,7 +31,7 @@ Test folder: [Model Lines](Specifications test files/Model Lines)
 
 ---
 
-### **Wall**
+### **Walls**
 
 
 | Platform                 |Native Functionality| Import | Export |
@@ -88,6 +88,19 @@ Test folder: [Nested Groups](Specifications test files/Nested Groups)
 
 * IFC offers two different "structures" to group and organize contents: [space-related](http://www.buildingsmart-tech.org/ifc/IFC4x1/html/schema/ifcproductextension/lexical/ifcrelcontainedinspatialstructure.htm) (Building->BuildingStorey->Zone->Space) and non-space-related ([Group](http://www.buildingsmart-tech.org/ifc/IFC4x1/html/schema/ifckernel/lexical/ifcgroup.htm) ). These two structures are fully independent and cannot be combined (you cannot add a group to a spatial structure element). Check if using IFC Groups is the most adequate form, and if it wouldn't be better to switch to a full space-related system.
 
+---
+
+
+### Duplicatable components
+
+
+A way to be able to group a series of objects into a same structure, let's call it a component, and duplicate that component in the model. If one object is changed, added or removed from/to the base component, all instances of that component should update automatically. This is typically how "blocks" work in AutoCAD, or "components" in SketchUp, or "compounds" in FreeCAD. An example would be a restroom stall, with all its parts and accessories: door, wc basin, paper hanger, sink, etc.
+
+| Platform                 |Native Functionality| Import | Export |
+| --- | --- | --- | --- |
+| FreeCAD                  |[Compound](http://www.freecadweb.org/wiki/index.php?title=Part_MakeCompound)| x| x |
+| Revit                    |x|x|x|
+| ArchiCAD 					| x | x | x |
 
 ---
 
