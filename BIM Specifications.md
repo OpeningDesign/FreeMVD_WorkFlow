@@ -36,7 +36,7 @@ Test folder: [Model Lines](Specifications test files/Model Lines)
 
 | Platform                 |Native Functionality| Import | Export |
 | --- | --- | --- | --- |
-| FreeCAD                  |x| x| x |
+| FreeCAD                  |[Walls](http://www.freecadweb.org/wiki/index.php?title=Arch_Wall)|[IfcWall](https://encrypted.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&cad=rja&uact=8&ved=0ahUKEwiekN3amJrRAhVFHZAKHVaZBrQQFgghMAE&url=http%3A%2F%2Fwww.buildingsmart-tech.org%2Fifc%2FIFC4%2Ffinal%2Fhtml%2Fschema%2Fifcsharedbldgelements%2Flexical%2Fifcwall.htm&usg=AFQjCNFehG4I0NTWy_EHVqfUV9skODan5w&sig2=qdyLzXHB0uERtQ2MUO-NBg) and IfcStandardWall are imported as [wall](http://www.freecadweb.org/wiki/index.php?title=Arch_Wall) objects | all [walls](http://www.freecadweb.org/wiki/index.php?title=Arch_Wall) and any other [Arch](http://www.freecadweb.org/wiki/index.php?title=Arch_Module)-based object which Role property is set as Wall, is exported as an [IfcWall](https://encrypted.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&cad=rja&uact=8&ved=0ahUKEwiekN3amJrRAhVFHZAKHVaZBrQQFgghMAE&url=http%3A%2F%2Fwww.buildingsmart-tech.org%2Fifc%2FIFC4%2Ffinal%2Fhtml%2Fschema%2Fifcsharedbldgelements%2Flexical%2Fifcwall.htm&usg=AFQjCNFehG4I0NTWy_EHVqfUV9skODan5w&sig2=qdyLzXHB0uERtQ2MUO-NBg).|
 | Revit                    |[Walls](https://knowledge.autodesk.com/support/revit-products/learn-explore/caas/CloudHelp/cloudhelp/2016/ENU/Revit-Model/files/GUID-9A9F7D00-A6A1-4E17-8C74-0965FDA5E007-htm.html)|from FreeCAD, the wall imports as a in-place family, that is, not an intelligent wall|Yes|
 | ArchiCAD 					| x | x | x |
 
