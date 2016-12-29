@@ -48,6 +48,21 @@ Test folder: [Wall](Specifications test files/Wall)
 
 ---
 
+### Materials
+
+The notion of material in IFC is spread over different types: objects can have a [IfcStyledItem](http://www.buildingsmart-tech.org/ifc/IFC2x4/rc1/html/ifcpresentationappearanceresource/lexical/ifcstyleditem.htm) applied directly to them, that allows to set for example a color, an [IfcMaterial](http://www.buildingsmart-tech.org/ifc/IFC2x4/alpha/html/ifcmaterialresource/lexical/ifcmaterial.htm), that actually contains little more (it also contains an IfcStyledItem), and different [IfcProperties](http://www.buildingsmart-tech.org/ifc/IFC2x4/rc1/html/ifcpropertyresource/lexical/ifcpropertysinglevalue.htm) that is where the physical properties of a material can be stored.
+
+Any Ifc object can have any of the above. For the material to work in Revit, it must have a IfcStyledItem directly applied on the object,and an IfcMaterial. Both the IfcStyledItem and the IfcMaterial contain an [IfcSurfaceStyle](http://www.buildingsmart-tech.org/ifc/IFC2x3/TC1/html/ifcpresentationappearanceresource/lexical/ifcsurfacestyle.htm). It is important that both these IfcSurfaceStyle have the same name as the material. So for any given object with a material, you need three IFC entities with the same name.
+
+| Platform                 |Native Functionality| Import | Export |
+| --- | --- | --- | --- |
+| FreeCAD                  |[Material](http://www.freecadweb.org/wiki/index.php?title=Arch_SetMaterial)| For objects with an associated IfcMaterial, a FreeCAD material is created and linked to the object. For objects that only have a Surface Style directly applied, no material is created in FreeCAD, but the object takes the color of the Surface Style.| If FreeCAD objects have a material, it is exported as an IfcMaterial with corresponding Surface Style. Otherwise, only the shape color is exported as Surface Style. |
+| Revit                    |x|x|x|
+| ArchiCAD 					| x | x | x |
+
+
+---
+
 ### **Name and Description:** All objects and materials should have a human-readable name or description
 
 
