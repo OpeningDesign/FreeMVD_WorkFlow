@@ -69,25 +69,26 @@ DATA;
 
 
 #466=IFCRELASSOCIATESMATERIAL('2ILkq8pUCHveq0093rt3ko',#45,'MaterialLink','',(#449),#458);
-
-	
-	
 		#465=IFCMATERIALDEFINITIONREPRESENTATION($,$,(#464),#458);
 			#464=IFCSTYLEDREPRESENTATION(#411,'Style','Material',(#463));			
 				#463=IFCSTYLEDITEM($,(#462),$);				
 					#462=IFCPRESENTATIONSTYLEASSIGNMENT((#461));	
-						#461=IFCSURFACESTYLE($,.BOTH.,(#460));
+						#461=IFCSURFACESTYLE('Testy Material (Identity)',.BOTH.,(#460));
 							#460=IFCSURFACESTYLERENDERING(#459,$,$,$,$,$,$,$,.FLAT.);
 								#459=IFCCOLOURRGB($,1.,0.,0.);
 			#458=IFCMATERIAL('Testy Material (Identity)',$,$);
 				
 
 				
+				
+				
+				
+				
+				
+				
 #441=IFCSTYLEDITEM(#436,(#440),$);				
-	#440=IFCPRESENTATIONSTYLEASSIGNMENT((#439));
-		#439=IFCSURFACESTYLE($,.BOTH.,(#438));
-			#438=IFCSURFACESTYLERENDERING(#437,$,$,$,$,$,$,$,.FLAT.);
-				#437=IFCCOLOURRGB($,1.,0.,0.);
+	#440=IFCPRESENTATIONSTYLEASSIGNMENT((#461));
+
 				
 				
 				
