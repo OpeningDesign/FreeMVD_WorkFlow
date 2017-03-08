@@ -19,7 +19,6 @@ The correct implementation of these rules implies a good understanding of the [I
 ### **Model Lines:** Lines in 3-dimensional space
 
 
-
 | Platform                 |Native Functionality| Import | Export |
 | --- | --- | --- | --- |
 | FreeCAD                  |Any [Part-based](http://www.freecadweb.org/wiki/index.php?title=Part_Module) object which contains edges and no faces, such as [Draft](http://www.freecadweb.org/wiki/index.php?title=Draft_Module) or [Sketch](http://www.freecadweb.org/wiki/index.php?title=Sketcher_Module) objects| [IfcAnnotation](http://www.buildingsmart-tech.org/ifc/IFC4/final/html/schema/ifcproductextension/lexical/ifcannotation.htm) objects are imported as simple, non-parametric Part objects. Color and line style currently not supported. | Part-based objects with edges and no faces are exported as [IfcAnnotation](http://www.buildingsmart-tech.org/ifc/IFC4/final/html/schema/ifcproductextension/lexical/ifcannotation.htm) |
@@ -117,6 +116,50 @@ A way to be able to group a series of objects into a same structure, let's call 
 | Revit                    |x|x|x|
 | ArchiCAD 					| x | x | x |
 
+
+---
+
+
+### Generic components
+
+
+IFC objects that are not of a specific type (wall, beam, etc) are usually saved into IFC as [BuildingElementProxy](http://www.buildingsmart-tech.org/ifc/IFC2x3/TC1/html/ifcproductextension/lexical/ifcbuildingelementproxy.htm). This is often used by applications that don't classify geometric objects by type (most non-BIM applications like Blender or Sketchup), but can be also used when you want a specific object to be rendered as less parametric as possible.
+
+| Platform                 |Native Functionality| Import | Export |
+| --- | --- | --- | --- |
+| FreeCAD                  |[Part shape](https://www.freecadweb.org/wiki/Part_Module)|[BuildingElementProxy](http://www.buildingsmart-tech.org/ifc/IFC2x3/TC1/html/ifcproductextension/lexical/ifcbuildingelementproxy.htm) objects are rendered either as simple, non-parametric Part shapes, or as generic [Arch components](https://www.freecadweb.org/wiki/Arch_Component) depending on the import preference settings. The Arch component will retain the IFC properties and material attached to the object, while the Part shape not.| Generic [Arch components](https://www.freecadweb.org/wiki/Arch_Component) and any other FreeCAD object that is not one of the [Arch](https://www.freecadweb.org/wiki/Arch_Module) building elements (Wall, structure, etc) will be exported as BuildingElementPRoxy.|
+| Revit                    |Generic component|x|x|
+| ArchiCAD 					| x | x | x |
+
+
+---
+
+### Safe geometry types
+
+**To be developed:**
+
+Some geometry types, although they import correctly in all applications, are sometimes not editable (the concept of what editable means needs to be developed as well). This item should identify the geometry types that are "safe".
+
+Note that in any application, safe geometry only means that: The geometry will be safely reproduced. All the semantic layers on top of the geometry (type, properties, materials, etc) is independent from the geometry itself. A faithfully rendered geometry doesn't necessarily mean that all these pieces of information will be reproduced correctly as well.
+
+**Safe geometry for Revit**
+
+* **Extrusions**: Revit will treat all extrusion (derived from [If ExtrudedAreaSolid](http://www.buildingsmart-tech.org/ifc/IFC2x3/TC1/html/ifcgeometricmodelresource/lexical/ifcextrudedareasolid.htm) ) as native Revit extusions, which is the basic condition to be editable. 
+* **Faceted Breps**: Revit is also able sometimes to recognize extrusions from very simple and prismatic [IfcFacetedBrep](http://www.buildingsmart-tech.org/ifc/IFC2x4/rc1/html/ifcgeometricmodelresource/lexical/ifcfacetedbrep.htm) objects, and therefore consider them as editable too. All the rest will be non-editable (excluding untested types below).
+
+**Safe geometry for FreeCAD**
+
+* A priori, anything is safe in FreeCAD. The [IfcOpenShell](http://ifcopenshell.org/) engine, which is responsible for importing and exporting IFC files in FreeCAD, supports almost all the possible IFC geometry types and creates native FreeCAD geometry from them. However, FreeCAD doesn't feature the same "editability" concept as Revit. Objects are not editable or not by nature. However, the nature of FreeCAD objects, which are all breakable/reconstructable, allows in theory any object to be modified. However a couple of types will render in a more parametric way:
+* **Extrusions**: all extrusion (derived from [If ExtrudedAreaSolid](http://www.buildingsmart-tech.org/ifc/IFC2x3/TC1/html/ifcgeometricmodelresource/lexical/ifcextrudedareasolid.htm) ) objects will be rendered as [Part Extrusions](https://www.freecadweb.org/wiki/Part_Extrude) or, if they are of a type whose corresponding [Arch](https://www.freecadweb.org/wiki/Arch_Module) equivalent is extrudable (Structure or Wall), as such.
+
+**To be tested:**
+
+* Vertical (Z-axis) [extrusions](http://www.buildingsmart-tech.org/ifc/IFC4/final/html/schema/ifcgeometricmodelresource/lexical/ifcextrudedareasolid.htm) of any profile (straight/only lines, complex/curved, and predefined types)
+* Arbitrary (any direction) extrusions of any profile
+* [Booleans](http://www.buildingsmart-tech.org/ifc/IFC4/final/html/schema/ifcgeometricmodelresource/lexical/ifcbooleanresult.htm) (unions, differences, intersections)
+* [Faceted Brep](http://www.buildingsmart-tech.org/ifc/IFC4/final/html/schema/ifcgeometricmodelresource/lexical/ifcfacetedbrep.htm) shapes
+* [Advanced Brep](http://www.buildingsmart-tech.org/ifc/IFC4/final/html/schema/ifcgeometricmodelresource/lexical/ifcadvancedbrep.htm) shapes
+
 ---
 
 ## Tools
@@ -136,32 +179,6 @@ It is fundamental for the author of an IFC file to be fully aware of what has be
 **To be developed:**
 
 * For now the only reliable one I know that is open-source and cross-platform is [IfcPlusPlus](http://www.ifcplusplus.com/) which does a fairly good job. If it prints no error, and all objects appear in place, it generally means the data is of very good quality. [BimServer](http://bimserver.org/) might become a perfect option once it has good data validation plugins. IfcPlusPlus doesn't support IfcAdvancedBrep (Still not checked with BimServer).
-
-### Use geometry types that makes objects editable in all applications
-
-**To be developed:**
-
-Some geometry types, although they import correctly in all applications, are sometimes not editable (the concept of what editable means needs to be developed as well). This item should identify the geometry types that are "safe".
-
-Note that in any application, safe geometry only means that: The geometry will be safely reproduced. All the semantic layers on top of the geometry (type, properties, materials, etc) is independent from the geometry itself. A faithfully rendered geometry doesn't necessarily mean that all these pieces of information will be reproduced correctly as well.
-
-**Safe geometry for Revit**
-
-* **Extrusions**: Revit will treat all extrusion (derived from [If ExtrudedAreaSolid](http://www.buildingsmart-tech.org/ifc/IFC2x3/TC1/html/ifcgeometricmodelresource/lexical/ifcextrudedareasolid.htm) as native Revit extusions, which is the basic condition to be editable. 
-* **Faceted Breps**: Revit is also able sometimes to recognize extrusions from very simple and prismatic [IfcFacetedBrep](http://www.buildingsmart-tech.org/ifc/IFC2x4/rc1/html/ifcgeometricmodelresource/lexical/ifcfacetedbrep.htm) objects, and therefore consider them as editable too. All the rest will be non-editable (excluding untested types below).
-
-**Safe geometry for FreeCAD**
-
-* A priori, anything is safe in FreeCAD. The [IfcOpenShell](http://ifcopenshell.org/) engine, which is responsible for importing and exporting IFC files in FreeCAD, supports almost all the possible IFC geometry types and creates native FreeCAD geometry from them. However, FreeCAD doesn't feature the same "editability" concept as Revit. Objects are not editable or not by nature. However, the nature of FreeCAD objects, which are all breakable/reconstructable, allows in theory any object to be modified. However a couple of types will render in a more parametric way:
-* **Extrusions**: all extrusion (derived from [If ExtrudedAreaSolid](http://www.buildingsmart-tech.org/ifc/IFC2x3/TC1/html/ifcgeometricmodelresource/lexical/ifcextrudedareasolid.htm) objects will be rendered as [Part Extrusions](https://www.freecadweb.org/wiki/Part_Extrude) or, if they are of a type whose corresponding [Arch](https://www.freecadweb.org/wiki/Arch_Module) equivalent is extrudable (Structure or Wall), as such.
-
-**To be tested:**
-
-* Vertical (Z-axis) [extrusions](http://www.buildingsmart-tech.org/ifc/IFC4/final/html/schema/ifcgeometricmodelresource/lexical/ifcextrudedareasolid.htm) of any profile (straight/only lines, complex/curved, and predefined types)
-* Arbitrary (any direction) extrusions of any profile
-* [Booleans](http://www.buildingsmart-tech.org/ifc/IFC4/final/html/schema/ifcgeometricmodelresource/lexical/ifcbooleanresult.htm) (unions, differences, intersections)
-* [Faceted Brep](http://www.buildingsmart-tech.org/ifc/IFC4/final/html/schema/ifcgeometricmodelresource/lexical/ifcfacetedbrep.htm) shapes
-* [Advanced Brep](http://www.buildingsmart-tech.org/ifc/IFC4/final/html/schema/ifcgeometricmodelresource/lexical/ifcadvancedbrep.htm) shapes
 
 
 <!-- Table Template
