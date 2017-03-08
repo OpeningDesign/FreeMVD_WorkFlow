@@ -137,11 +137,23 @@ It is fundamental for the author of an IFC file to be fully aware of what has be
 
 * For now the only reliable one I know that is open-source and cross-platform is [IfcPlusPlus](http://www.ifcplusplus.com/) which does a fairly good job. If it prints no error, and all objects appear in place, it generally means the data is of very good quality. [BimServer](http://bimserver.org/) might become a perfect option once it has good data validation plugins. IfcPlusPlus doesn't support IfcAdvancedBrep (Still not checked with BimServer).
 
-### 04. Use geometry types that makes objects editable in all applications
+### Use geometry types that makes objects editable in all applications
 
 **To be developed:**
 
-* Some geometry types, although they import correctly in all applications, are sometimes not editable (the concept of what editable means needs to be developed as well). This item should identify the geometry types that are "safe".
+Some geometry types, although they import correctly in all applications, are sometimes not editable (the concept of what editable means needs to be developed as well). This item should identify the geometry types that are "safe".
+
+Note that in any application, safe geometry only means that: The geometry will be safely reproduced. All the semantic layers on top of the geometry (type, properties, materials, etc) is independent from the geometry itself. A faithfully rendered geometry doesn't necessarily mean that all these pieces of information will be reproduced correctly as well.
+
+** Safe geometry for Revit **
+
+* **Extrusions**: Revit will treat all extrusion (derived from [If ExtrudedAreaSolid](http://www.buildingsmart-tech.org/ifc/IFC2x3/TC1/html/ifcgeometricmodelresource/lexical/ifcextrudedareasolid.htm) as native Revit extusions, which is the basic condition to be editable. 
+* **Faceted Breps**: Revit is also able sometimes to recognize extrusions from very simple and prismatic [IfcFacetedBrep](http://www.buildingsmart-tech.org/ifc/IFC2x4/rc1/html/ifcgeometricmodelresource/lexical/ifcfacetedbrep.htm) objects, and therefore consider them as editable too. All the rest will be non-editable (excluding untested types below).
+
+** Safe geometry for FreeCAD **
+
+* A priori, anything is safe in FreeCAD. The [IfcOpenShell](http://ifcopenshell.org/) engine, which is responsible for importing and exporting IFC files in FreeCAD, supports almost all the possible IFC geometry types and creates native FreeCAD geometry from them. However, FreeCAD doesn't feature the same "editability" concept as Revit. Objects are not editable or not by nature. However, the nature of FreeCAD objects, which are all breakable/reconstructable, allows in theory any object to be modified. However a couple of types will render in a more parametric way:
+* **Extrusions**: all extrusion (derived from [If ExtrudedAreaSolid](http://www.buildingsmart-tech.org/ifc/IFC2x3/TC1/html/ifcgeometricmodelresource/lexical/ifcextrudedareasolid.htm) objects will be rendered as [Part Extrusions](https://www.freecadweb.org/wiki/Part_Extrude) or, if they are of a type whose corresponding [Arch](https://www.freecadweb.org/wiki/Arch_Module) equivalent is extrudable (Structure or Wall), as such.
 
 **To be tested:**
 
