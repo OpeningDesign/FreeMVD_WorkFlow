@@ -5,7 +5,7 @@ This repo is a place to hash out simple IFC roundtripping between FreeCAD and Re
 
 Hopefully, in the future, the FreeMVD will become more platform agnostic--applying to other BIM platforms as well.  
 
-The evolving documentation lives [here](BIM Specifications.md).
+The evolving documentation lives [here](https://github.com/OpeningDesign/FreeMVD_WorkFlow/blob/master/BIM%20Specifications.md).
 
 
 ---
