@@ -1,0 +1,161 @@
+# IFC Class Name and Type to Revit Category/Sub-Category Table
+# Maps IFC Class and Type to Revit Category/Sub-Category
+# You may edit using File -> Import/Export Settings -> IFC Options... .
+# -----------------------------------------------------
+IfcAirTerminal		Generic Models	
+IfcAirTerminalType		Generic Models	
+IfcAnnotation		Generic Models	
+IfcBeam		Generic Models	
+IfcBeamType		Generic Models	
+IfcBoiler		Generic Models	
+IfcBoilerType		Generic Models	
+IfcBuildingElementPart		Generic Models	
+IfcBuildingElementPartType		Generic Models	
+IfcBuildingElementProxy		Generic Models	
+IfcBuildingElementProxyType		Generic Models	
+IfcCableCarrierFitting		Generic Models	
+IfcCableCarrierFittingType		Generic Models	
+IfcCableCarrierSegment		Generic Models	
+IfcCableCarrierSegmentType		Generic Models	
+IfcColumn		Generic Models	
+IfcColumn	[LoadBearing]	Generic Models	
+IfcColumn	COLUMN	Generic Models	
+IfcColumn	NOTDEFINED	Generic Models	
+IfcColumn	USERDEFINED	Generic Models	
+IfcColumnType		Generic Models	
+IfcColumnType	[LoadBearing]	Generic Models	
+IfcColumnType	COLUMN	Generic Models	
+IfcColumnType	NOTDEFINED	Generic Models	
+IfcColumnType	USERDEFINED	Generic Models	
+IfcController		Generic Models	
+IfcControllerType		Generic Models	
+IfcCovering		Generic Models	
+IfcCovering	CEILING	Generic Models	
+IfcCovering	FLOORING	Generic Models	
+IfcCovering	ROOFING	Generic Models	
+IfcCoveringType		Generic Models	
+IfcCoveringType	CEILING	Generic Models	
+IfcCoveringType	FLOORING	Generic Models	
+IfcCoveringType	ROOFING	Generic Models	
+IfcCurtainWall		Generic Models	
+IfcCurtainWallType		Generic Models	
+IfcDiscreteAccessory		Generic Models	
+IfcDiscreteAccessoryType		Generic Models	
+IfcDistributionFlowElement		Generic Models	
+IfcDoor		Generic Models	
+IfcDoorStyle		Generic Models	
+IfcDoorType		Generic Models	
+IfcDuctFitting		Generic Models	
+IfcDuctFittingType		Generic Models	
+IfcDuctSegment		Generic Models	
+IfcDuctSegmentType		Generic Models	
+IfcElectricAppliance	DISHWASHER	Generic Models	
+IfcElectricAppliance	ELECTRICCOOKER	Generic Models	
+IfcElectricAppliance	FRIDGE_FREEZER	Generic Models	
+IfcElectricAppliance	TUMBLEDRYER	Generic Models	
+IfcElectricAppliance	USERDEFINED	Generic Models	
+IfcElectricAppliance	WASHINGMACHINE	Generic Models	
+IfcElectricApplianceType	DISHWASHER	Generic Models	
+IfcElectricApplianceType	ELECTRICCOOKER	Generic Models	
+IfcElectricApplianceType	FRIDGE_FREEZER	Generic Models	
+IfcElectricApplianceType	TUMBLEDRYER	Generic Models	
+IfcElectricApplianceType	USERDEFINED	Generic Models	
+IfcElectricApplianceType	WASHINGMACHINE	Generic Models	
+IfcEnergyConversionDevice		Generic Models	
+IfcFan		Generic Models	
+IfcFanType		Generic Models	
+IfcFastener		Generic Models	
+IfcFastenerType		Generic Models	
+IfcFireSuppressionTerminal	SPRINKLER	Generic Models	
+IfcFireSuppressionTerminalType	SPRINKLER	Generic Models	
+IfcFlowController		Generic Models	
+IfcFlowControllerType		Generic Models	
+IfcFlowMovingDevice		Generic Models	
+IfcFlowStorageDevice		Generic Models	
+IfcFlowTerminal		Generic Models	
+IfcFooting		Generic Models	
+IfcFootingType		Generic Models	
+IfcFurnishingElement		Generic Models	
+IfcFurnishingElementType		Generic Models	
+IfcFurniture		Generic Models	
+IfcFurnitureType		Generic Models	
+IfcGeographicElement		Generic Models	
+IfcGeographicElementType		Generic Models	
+IfcLamp		Generic Models	
+IfcLampType		Generic Models	
+IfcLightFixture		Generic Models	
+IfcLightFixtureType		Generic Models	
+IfcMechanicalFastener		Generic Models	
+IfcMechanicalFastenerType		Generic Models	
+IfcMember		Generic Models	
+IfcMember	MULLION	Generic Models	
+IfcMemberType		Generic Models	
+IfcMemberType	MULLION	Generic Models	
+IfcOpeningElement		Generic Models	
+IfcPile		Generic Models	
+IfcPileType		Generic Models	
+IfcPipeFitting		Generic Models	
+IfcPipeFittingType		Generic Models	
+IfcPipeSegment		Generic Models	
+IfcPipeSegmentType		Generic Models	
+IfcPlate		Generic Models	
+IfcPlate	CURTAIN_PANEL	Generic Models	
+IfcPlateType		Generic Models	
+IfcPlateType	CURTAIN_PANEL	Generic Models	
+IfcPump		Generic Models	
+IfcPumpType		Generic Models	
+IfcRailing		Generic Models	
+IfcRailingType		Generic Models	
+IfcRamp		Generic Models	
+IfcRampFlight		Generic Models	
+IfcRampFlightType		Generic Models	
+IfcRampType		Generic Models	
+IfcReinforcingBar		Generic Models	
+IfcReinforcingBarType		Generic Models	
+IfcReinforcingMesh		Generic Models	
+IfcReinforcingMeshType		Generic Models	
+IfcRoof		Generic Models	
+IfcRoofType		Generic Models	
+IfcSanitaryTerminal		Generic Models	
+IfcSanitaryTerminalType		Generic Models	
+IfcSensor		Generic Models	
+IfcSensorType		Generic Models	
+IfcSite		Generic Models	
+IfcSlab		Generic Models	
+IfcSlab	BASESLAB	Generic Models	
+IfcSlab	FLOOR	Generic Models	
+IfcSlab	LANDING	Generic Models	Landings
+IfcSlab	ROOF	Generic Models	
+IfcSlabType		Generic Models	
+IfcSlabType	BASESLAB	Generic Models	
+IfcSlabType	FLOOR	Generic Models	
+IfcSlabType	LANDING	Generic Models	Landings
+IfcSlabType	ROOF	Generic Models	
+IfcSpace		Generic Models	
+IfcSpaceHeater		Generic Models	
+IfcSpaceHeaterType		Generic Models	
+IfcSpaceType		Generic Models	
+IfcStair		Generic Models	
+IfcStairFlight		Generic Models	
+IfcStairFlightType		Generic Models	
+IfcStairType		Generic Models	
+IfcSwitchingDevice		Generic Models	
+IfcSwitchingDeviceType		Generic Models	
+IfcSystemFurnitureElement		Generic Models	
+IfcSystemFurnitureElementType		Generic Models	
+IfcTank		Generic Models	
+IfcTankType		Generic Models	
+IfcTransportElement		Generic Models	
+IfcTransportElementType		Generic Models	
+IfcValve		Generic Models	
+IfcValve	DRAWOFFCOCK	Generic Models	
+IfcValve	FAUCET	Generic Models	
+IfcValveType		Generic Models	
+IfcValveType	DRAWOFFCOCK	Generic Models	
+IfcValveType	FAUCET	Generic Models	
+IfcWall		Generic Models	
+IfcWallStandardCase		Generic Models	
+IfcWallType		Generic Models	
+IfcWindow		Generic Models	
+IfcWindowStyle		Generic Models	
+IfcWindowType		Generic Models	
