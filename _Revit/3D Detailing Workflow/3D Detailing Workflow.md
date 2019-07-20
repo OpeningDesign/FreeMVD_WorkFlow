@@ -7,16 +7,18 @@ When modeling 3D details, here are some basic approaches to consider.
 ### Details that will be roundtripped between Revit/FreeCAD
 
 - Every model should be a MIP (model in place) family.
-- The MIP family should be set to the 'Wall' category even if the model object itself is not a wall. The only reason being is that Revit LT only allows you to create a MIP family in the wall category--the other categories are restricted.  This assures that the entire team doesn't need full blow Revit, to help model these details.
+- The MIP family should be set to the 'Wall' category even if the model object itself is not a wall. The only reason being is that Revit LT only allows you to create a MIP family in the wall category--the other categories are restricted.  This assures that the entire team doesn't need full blown Revit, to help model these details.
 - All MIP families should be **disassociated** from a working plane.  The reason being is that when a MIP family is associated with a working plane, it does not mirror or rotate property.  Also, the association would not survive a roundtrip either.
 	- To disassociate the MIP from it's working plane, select the model and enter it's "Edit in Place" mode. Select the object so we can see it's properties column will show up. In the Constraints tab, go to Work Plane. If the work plane is still associated with the main base plane, the name of the plane will appear. So select the object and click on the diagonal square with lock that appears. Once the lock is clicked, the object property work plane on the properties panel will show <not associated>, thus indicating that the MIP is disassociated and therefore can be used easily else where. 
 - Only model Extrusions
 	- Don't model the following, as they do not holdup during a Revit/FreeCAD rountrip
-		- Sweeps
-		- Voids
-		- Blend
-		- Revolve
-		- Swept Blend
+		- The following MIP familes
+			- Sweeps
+			- Voids
+			- Blend
+			- Revolve
+			- Swept Blend
+		- 'Loadable' or Standard Families.
 - Assign Revit Materials to the individual MIP families.  We then use Revit's 'Material Tag' to annotate the detail.
 
 
@@ -52,6 +54,6 @@ In the event of creating a library that is meant to grow and evolve over time, i
 	- Also avoid other symbols such as ( " ) or ( ' ) which are often used in sizes to identify feet from inches.--as they these symbols don't play nicely with Window's path names.  When it is required to use ft and inches it is best to write (ft) and (in) next to the text name. 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MzkyNTE1NjIsODc4NzY1ODksLTIwNz
-UxMTgyMywtNzk1MDUzNjIxXX0=
+eyJoaXN0b3J5IjpbOTM5NjYzNDMzLDg3ODc2NTg5LC0yMDc1MT
+E4MjMsLTc5NTA1MzYyMV19
 -->
