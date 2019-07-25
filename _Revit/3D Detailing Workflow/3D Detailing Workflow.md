@@ -30,6 +30,11 @@ If only modeling in Revit, and don't plan on roundtipping with FreeCAD via IFC, 
 		- Only create a profile family if you envision using the profile again in another project. If it doesn't pass this test, use an Extrusion.
 		- Save the profile here: https://github.com/OpeningDesign/BIM_Profiles
 			- See below, for naming conventions of profiles.
+- 	Do not use the following however. The reason being, is that hopefully in the near future, we can get Sweeps with Profile Families to work via IFC, but the other modeling approaches below, are further out in the roadmap.
+	- Voids
+	- Blend
+	- Revolve
+	- Swept Blend
 - Objects of repetitive nature such as objects O.C. i.e studs/furrings etc should be made into a group, and this group can be duplicated in an array or desired repetitiveness into another 'over all encompassing group'. This is an efficient way of managing these repetitive instances of the same object in an area especially when a modification is needed. Only one object of the instance within the main group can be modified and thus modifies all the remaining objects in the group at once.
 
 
@@ -54,6 +59,6 @@ In the event of creating a library that is meant to grow and evolve over time, i
 	- Also avoid other symbols such as ( " ) or ( ' ) which are often used in sizes to identify feet from inches.--as they these symbols don't play nicely with Window's path names.  When it is required to use ft and inches it is best to write (ft) and (in) next to the text name. 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTM5NjYzNDMzLDg3ODc2NTg5LC0yMDc1MT
-E4MjMsLTc5NTA1MzYyMV19
+eyJoaXN0b3J5IjpbLTcxMTg5NzEyNCw5Mzk2NjM0MzMsODc4Nz
+Y1ODksLTIwNzUxMTgyMywtNzk1MDUzNjIxXX0=
 -->
