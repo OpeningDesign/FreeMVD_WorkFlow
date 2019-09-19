@@ -57,6 +57,14 @@ In the event of creating a library that is meant to grow and evolve over time, i
 	- Profile is the name of the type of profile, for example a 2x4 is of a different profile from a 2x6 although both can be made from the same company and have the same numbering system from MasterFormat. We also observe this mainly with Reglets, Furrings, and most other materials which have an array of different profiles. 
 	- Sizes also help identify the size of an object, ideally providing the Length and Width for profiles is enough since the height can be determined by the design of the object in place, meanwhile for dedicated shapes with BIM Objects such as CMU's and Bricks etc etc, can have their Heights, Lengths, and Widths immediately identified.
 	- Also avoid other symbols such as ( " ) or ( ' ) which are often used in sizes to identify feet from inches.--as they these symbols don't play nicely with Window's path names.  When it is required to use ft and inches it is best to write (ft) and (in) next to the text name. 
+	
+### Example Projects that have used this workflow
+- https://github.com/OpeningDETAIL/Newport_Beach_CA_Residence
+- https://github.com/OpeningDETAIL/Laguna_Beach_Residence
+- https://github.com/OpeningDesign/FreeMVD_WorkFlow/tree/master/Example%20Projects/Restaurant
+- https://github.com/OpeningDesign/OD_Library/blob/master/BIM/OD_Revit_Template.rte
+
+
 
 <!--stackedit_data:
 eyJoaXN0b3J5IjpbLTcxMTg5NzEyNCw5Mzk2NjM0MzMsODc4Nz
