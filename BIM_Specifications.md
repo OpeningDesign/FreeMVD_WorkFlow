@@ -1,22 +1,33 @@
 # BIM Specifications
 
+
 Originally elaborated by [OpeningDesign](http://www.openingdesign.com) / Ryan Schultz / Yorik van Havre and licensed under [CreativeCommons](http://creativecommons.org/licenses/by/4.0/). Feel free to use, distribute or contribute to improve the process.
+
 
 ### Foreword
 
+
 This BIM specification, unlike most other BIM specifications available, is based on real-life, tested methods to get the job done and guarantee as much as possible the primary aim of BIM--real collaboration between the different actors of a building project.
+
 
 This specification consists of simple rules to guarantee a maximum of fidelity in data transfers using the [IFC](https://en.wikipedia.org/wiki/Industry_Foundation_Classes) file format. The following rules work with any version of the IFC schema.
 
+
 The correct implementation of these rules implies a good understanding of the [IFC format](http://www.buildingsmart-tech.org/ifc/IFC4x1/html/), and ways to verify the contents of IFC files others than in the software where it was authored. Several [free](http://www.ifcwiki.org/index.php/Open_Source) or [open-source](http://www.ifcwiki.org/index.php/Open_Source) applications allow to open, visualize and inspect IFC files and make sure that the rules below were correctly implemented.
 
+
 ---
+
 
 ## Rules
 
+
 ---
 
+
 ### **Model Lines:** Lines in 3-dimensional space
+
+
 
 
 | Platform                 |Native Functionality| Import | Export |
@@ -26,11 +37,17 @@ The correct implementation of these rules implies a good understanding of the [I
 | ArchiCAD 					| x | x | x |
 
 
+
+
 Test folder: [Model Lines](Specifications test files/Model Lines)
+
 
 ---
 
+
 ### **Walls**
+
+
 
 
 | Platform                 |Native Functionality| Import | Export |
@@ -39,19 +56,27 @@ Test folder: [Model Lines](Specifications test files/Model Lines)
 | Revit                    |[Walls](https://knowledge.autodesk.com/support/revit-products/learn-explore/caas/CloudHelp/cloudhelp/2016/ENU/Revit-Model/files/GUID-9A9F7D00-A6A1-4E17-8C74-0965FDA5E007-htm.html)|from FreeCAD, the wall imports as a in-place family, that is, not an intelligent wall|Yes|
 | ArchiCAD 					| x | x | x |
 
+
 Test folder: [Wall](Specifications test files/Wall)
+
 
 **To do:**
 
+
 * Check if there is any possibility to recreate a working family from an IFC file
+
 
 ---
 
+
 ### Materials
+
 
 The notion of material in IFC is spread over different types: objects can have a [IfcStyledItem](http://www.buildingsmart-tech.org/ifc/IFC2x4/rc1/html/ifcpresentationappearanceresource/lexical/ifcstyleditem.htm) applied directly to them, that allows to set for example a color, an [IfcMaterial](http://www.buildingsmart-tech.org/ifc/IFC2x4/alpha/html/ifcmaterialresource/lexical/ifcmaterial.htm), that actually contains little more (it also contains an IfcStyledItem), and different [IfcProperties](http://www.buildingsmart-tech.org/ifc/IFC2x4/rc1/html/ifcpropertyresource/lexical/ifcpropertysinglevalue.htm) that is where the physical properties of a material can be stored.
 
+
 Any Ifc object can have any of the above. For the material to work in Revit, it must have a IfcStyledItem directly applied on the object,and an IfcMaterial. Both the IfcStyledItem and the IfcMaterial contain an [IfcSurfaceStyle](http://www.buildingsmart-tech.org/ifc/IFC2x3/TC1/html/ifcpresentationappearanceresource/lexical/ifcsurfacestyle.htm). It is important that both these IfcSurfaceStyle have the same name as the material. So for any given object with a material, you need three IFC entities with the same name.
+
 
 | Platform                 |Native Functionality| Import | Export |
 | --- | --- | --- | --- |
@@ -60,16 +85,24 @@ Any Ifc object can have any of the above. For the material to work in Revit, it 
 | ArchiCAD 					| x | x | x |
 
 
+
+
 ---
+
 
 ### **Name and Description:** All objects and materials should have a human-readable name or description
 
 
+
+
 Objects should have a name that allows a human being to understand what it is, in case the software that reads the IFC file fails to recognize or categorize it appropriately. For example, bad names are "Object00014", "Material43". Good names are "Kitchen chair", "Grey concrete", "East living room wall"
+
 
 All [IFC objects](http://www.buildingsmart-tech.org/ifc/IFC4x1/html/schema/ifckernel/lexical/ifcroot.htm) have a **Name** and a **Description**. Any of them can be used for this purpose.
 
+
 This rule mainly applies to [IfcProduct](http://www.buildingsmart-tech.org/ifc/IFC4x1/html/schema/ifckernel/lexical/ifcproduct.htm) entities in IFC: They are the final, individual objects that compose a building. For example, a wall, a column, a chair, a window. It doesn't consider objects that are part of a final product, when they are composed of multiple objects, for example a leg of a chair or a brick of a wall. It is sufficient to have the chair correctly named, not necessarily each component of the chair.
+
 
 | Platform                 |Native Functionality| Import | Export |
 | ------------------------ | ------ | ------ | ------ |
@@ -77,18 +110,26 @@ This rule mainly applies to [IfcProduct](http://www.buildingsmart-tech.org/ifc/I
 | Revit                    |???|Upon import, **name** and **description** is not accessible to modify from Revit UI. see Screenshots [1](Specifications test files/wall_with_name_and_description/Revit Properties_1.png) & [2](Specifications test files/wall_with_name_and_description/Revit Properties_2.png)      |  **Name** and **description** exports out correctly.      |
 | ArchiCAD | ??? | ??? | ??? |
 
+
 Test folder: [Name and Description](Specifications test files/Name and Description)
+
 
 **To do:**
 
+
 * Check where name and description are stored in Revit, maybe that could be accessed by dynamo or something. See if Revit doesn't provide any alternative (different ways to "label" objects)
 
+
 ---
+
 
 ### **Nested Groups:** All objects should be grouped in meaningful ways
 
 
+
+
 Grouping objects using [IfcGroups](http://www.buildingsmart-tech.org/ifc/IFC4x1/html/schema/ifckernel/lexical/ifcgroup.htm) allows a human being to clearly recognize objects as being part of a same area, funcion or category. Groups can be nested inside other groups. A same object cannot be part of several groups.
+
 
 | Platform                  |Native Functionality| Import | Export |
 | ------------------------ | ------ | ------ | ------ |
@@ -96,25 +137,41 @@ Grouping objects using [IfcGroups](http://www.buildingsmart-tech.org/ifc/IFC4x1/
 | Revit                    |[Groups of Elements](https://knowledge.autodesk.com/support/revit-products/learn-explore/caas/CloudHelp/cloudhelp/2016/ENU/Revit-Model/files/GUID-52612B0F-43AA-47AF-A76C-BB0E3DD24E34-htm.html)|   Does not import IFCgroups into Revit Groups     |  Yes, exports ```#253= IFCGROUP('2wfBgyl9H71872FVeaZPs0',#41,'Model Group:Test Revit Group:149951',$,'Model Group:Test Revit Group');``` |
 | ArchiCAD | ??? | ??? | ??? |
 
+
 Test folder: [Nested Groups](Specifications test files/Nested Groups)
+
 
 **To do:**
 
+
 * IFC offers two different "structures" to group and organize contents: [space-related](http://www.buildingsmart-tech.org/ifc/IFC4x1/html/schema/ifcproductextension/lexical/ifcrelcontainedinspatialstructure.htm) (Building->BuildingStorey->Zone->Space) and non-space-related ([Group](http://www.buildingsmart-tech.org/ifc/IFC4x1/html/schema/ifckernel/lexical/ifcgroup.htm) ). These two structures are fully independent and cannot be combined (you cannot add a group to a spatial structure element). Check if using IFC Groups is the most adequate form, and if it wouldn't be better to switch to a full space-related system.
 
+
 ---
+
+
 
 
 ### Duplicatable components
 
 
+
+
 A way to be able to group a series of objects into a same structure, let's call it a component, and duplicate that component in the model. If one object is changed, added or removed from/to the base component, all instances of that component should update automatically. This is typically how "blocks" work in AutoCAD, or "components" in SketchUp, or "compounds" in FreeCAD. An example would be a restroom stall, with all its parts and accessories: door, wc basin, paper hanger, sink, etc.
+
 
 | Platform                 |Native Functionality| Import | Export |
 | --- | --- | --- | --- |
-| FreeCAD                  |[Compound](http://www.freecadweb.org/wiki/index.php?title=Part_MakeCompound)| x| x |
-| Revit                    |x|x|x|
-| ArchiCAD 					| x | x | x |
+| FreeCAD                  |[Compound](http://www.freecadweb.org/wiki/index.php?title=Part_MakeCompound)| ?| ? |
+| Revit                    |Groups|N|Y|
+| Revit                    |Families|N|N|
+| Blender                    |Groups/Collections|N|N|
+| ArchiCAD 					| ? | ? | ? |
+
+
+---
+
+
 
 
 ---
@@ -123,7 +180,10 @@ A way to be able to group a series of objects into a same structure, let's call 
 ### Generic components
 
 
+
+
 IFC objects that are not of a specific type (wall, beam, etc) are usually saved into IFC as [BuildingElementProxy](http://www.buildingsmart-tech.org/ifc/IFC2x3/TC1/html/ifcproductextension/lexical/ifcbuildingelementproxy.htm). This is often used by applications that don't classify geometric objects by type (most non-BIM applications like Blender or Sketchup), but can be also used when you want a specific object to be rendered as less parametric as possible.
+
 
 | Platform                 |Native Functionality| Import | Export |
 | --- | --- | --- | --- |
@@ -132,27 +192,39 @@ IFC objects that are not of a specific type (wall, beam, etc) are usually saved 
 | ArchiCAD 					| x | x | x |
 
 
+
+
 ---
+
 
 ### Safe geometry types
 
+
 **To be developed:**
+
 
 Some geometry types, although they import correctly in all applications, are sometimes not editable (the concept of what editable means needs to be developed as well). This item should identify the geometry types that are "safe".
 
+
 Note that in any application, safe geometry only means that: The geometry will be safely reproduced. All the semantic layers on top of the geometry (type, properties, materials, etc) is independent from the geometry itself. A faithfully rendered geometry doesn't necessarily mean that all these pieces of information will be reproduced correctly as well.
 
+
 **Safe geometry for Revit**
+
 
 * **Extrusions**: Revit will treat all extrusion (derived from [If ExtrudedAreaSolid](http://www.buildingsmart-tech.org/ifc/IFC2x3/TC1/html/ifcgeometricmodelresource/lexical/ifcextrudedareasolid.htm) ) as native Revit extusions, which is the basic condition to be editable. 
 * **Faceted Breps**: Revit is also able sometimes to recognize extrusions from very simple and prismatic [IfcFacetedBrep](http://www.buildingsmart-tech.org/ifc/IFC2x4/rc1/html/ifcgeometricmodelresource/lexical/ifcfacetedbrep.htm) objects, and therefore consider them as editable too. All the rest will be non-editable (excluding untested types below).
 
+
 **Safe geometry for FreeCAD**
+
 
 * A priori, anything is safe in FreeCAD. The [IfcOpenShell](http://ifcopenshell.org/) engine, which is responsible for importing and exporting IFC files in FreeCAD, supports almost all the possible IFC geometry types and creates native FreeCAD geometry from them. However, FreeCAD doesn't feature the same "editability" concept as Revit. Objects are not editable or not by nature. However, the nature of FreeCAD objects, which are all breakable/reconstructable, allows in theory any object to be modified. However a couple of types will render in a more parametric way:
 * **Extrusions**: all extrusion (derived from [If ExtrudedAreaSolid](http://www.buildingsmart-tech.org/ifc/IFC2x3/TC1/html/ifcgeometricmodelresource/lexical/ifcextrudedareasolid.htm) ) objects will be rendered as [Part Extrusions](https://www.freecadweb.org/wiki/Part_Extrude) or, if they are of a type whose corresponding [Arch](https://www.freecadweb.org/wiki/Arch_Module) equivalent is extrudable (Structure or Wall), as such.
 
+
 **To be tested:**
+
 
 * Vertical (Z-axis) [extrusions](http://www.buildingsmart-tech.org/ifc/IFC4/final/html/schema/ifcgeometricmodelresource/lexical/ifcextrudedareasolid.htm) of any profile (straight/only lines, complex/curved, and predefined types)
 * Arbitrary (any direction) extrusions of any profile
@@ -160,28 +232,40 @@ Note that in any application, safe geometry only means that: The geometry will b
 * [Faceted Brep](http://www.buildingsmart-tech.org/ifc/IFC4/final/html/schema/ifcgeometricmodelresource/lexical/ifcfacetedbrep.htm) shapes
 * [Advanced Brep](http://www.buildingsmart-tech.org/ifc/IFC4/final/html/schema/ifcgeometricmodelresource/lexical/ifcadvancedbrep.htm) shapes
 
+
 ---
+
 
 ## Tools
 
 
+
+
 Use free/open-source IFC applications to validate the data inside IFC files.
+
 
 It is fundamental for the author of an IFC file to be fully aware of what has been included in that file. Therefore, it is essential to be able to vertify the contents of the file in a neutral manner (independent of the application that exported it). It should also be possible for other people to easily open that file, and verify its contents, independently of the application used to import it.
 
+
 **Items that should be checked on opening an IFC file for verification**:
+
 
 * The application used for verification reports no error on opening the file
 * The total number of objects informed by the application used for verification matches the number of objects informed by the application used for exporting
 * All the geometry is there when inspecting the 3D model in the application used for verification
 * All the geometry is at its correct location when inspecting the 3D model in the application used for verification
 
+
 **To be developed:**
+
 
 * For now the only reliable one I know that is open-source and cross-platform is [IfcPlusPlus](http://www.ifcplusplus.com/) which does a fairly good job. If it prints no error, and all objects appear in place, it generally means the data is of very good quality. [BimServer](http://bimserver.org/) might become a perfect option once it has good data validation plugins. IfcPlusPlus doesn't support IfcAdvancedBrep (Still not checked with BimServer).
 
 
+
+
 <!-- Table Template
+
 
 | Platform                 |Native Functionality| Import | Export |
 | --- | --- | --- | --- |
@@ -189,5 +273,10 @@ It is fundamental for the author of an IFC file to be fully aware of what has be
 | Revit                    |x|x|x|
 | ArchiCAD 					| x | x | x |
 
+
 -->
 
+
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTM4NjA5MDI5MF19
+-->
