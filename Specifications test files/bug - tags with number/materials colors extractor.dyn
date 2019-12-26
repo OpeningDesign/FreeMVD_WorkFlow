@@ -217,6 +217,170 @@
       ],
       "Replication": "Disabled",
       "Description": "Allows you to select a file on the system to get its filename"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.HigherOrder.Map, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "e140d2773e954485b4bfd68950f7c770",
+      "Inputs": [
+        {
+          "Id": "b1193560139a4fe5baece528a77e5dfa",
+          "Name": "list",
+          "Description": "The list to map over.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "b0b0d1e0041a44e09f69e34bb9963369",
+          "Name": "f(x)",
+          "Description": "The procedure used to map element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "e28131c783d74b3b9402e54969a99456",
+          "Name": "mapped",
+          "Description": "Mapped list",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Applies a function over all elements of a list, generating a new list from the results."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.String.Replace@string,string,string",
+      "Id": "39c0a8a5a237410cbe32a8c1772cc99f",
+      "Inputs": [
+        {
+          "Id": "fbd66fff4f0a497687fe088202c86455",
+          "Name": "str",
+          "Description": "String to replace substrings in.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "f1b4f2a60d5441f1a9301be11df55761",
+          "Name": "searchFor",
+          "Description": "Text to be replaced.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "32559a3df173425898d21346e2bf01ad",
+          "Name": "replaceWith",
+          "Description": "Text to replace with.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "aa6e78a0c65c42978776edd552e64566",
+          "Name": "str",
+          "Description": "String with replacements made.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Replaces all occurrences of text in a string with other text.\n\nString.Replace (str: string, searchFor: string, replaceWith: string): string"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "NodeType": "StringInputNode",
+      "InputValue": ",",
+      "Id": "3a985537c16547a6a84be5aee59d63f8",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "ffcf1ca3f86543b8abf6579bf80b5c96",
+          "Name": "",
+          "Description": "String",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a string."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "NodeType": "StringInputNode",
+      "InputValue": ";",
+      "Id": "2eb1d77a4b304fbe899caf66d2f6ba7e",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "1e402756eff44d15afd8a5ac61ccc6ce",
+          "Name": "",
+          "Description": "String",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a string."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.HigherOrder.Map, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "ab9ff84000984cf896c17cda003bb08d",
+      "Inputs": [
+        {
+          "Id": "ec53fcade66b4561b1d1d5e6e46156c5",
+          "Name": "list",
+          "Description": "The list to map over.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "abb7edddf8eb4ec898ea8b8a0ae61b96",
+          "Name": "f(x)",
+          "Description": "The procedure used to map element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "707872b6cf74456293fed198d10b382e",
+          "Name": "mapped",
+          "Description": "Mapped list",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Applies a function over all elements of a list, generating a new list from the results."
     }
   ],
   "Connectors": [
@@ -237,23 +401,53 @@
     },
     {
       "Start": "69ad375efd9d498d92f3050fad2e30ba",
-      "End": "879342dd425b48fd9978538641ba524f",
-      "Id": "e1481d62a7964ba39a7c128a7b00e68e"
+      "End": "ec53fcade66b4561b1d1d5e6e46156c5",
+      "Id": "255fd607b9ee4fbb8f7ff02e605d808d"
     },
     {
       "Start": "dad6bcc6cd104742902e85d0de2611f7",
-      "End": "fe3ced99d300429b8e19362c630d7efe",
-      "Id": "0d1860d89cf14d8190e01880e4df8521"
+      "End": "b1193560139a4fe5baece528a77e5dfa",
+      "Id": "0962fc66c21e4bc5b1d8d90ad0e982e9"
     },
     {
       "Start": "552aa6c2dfb1460bb77971651e9826ed",
       "End": "ff782123dbb34910ab53a2215025bb4c",
-      "Id": "b88714d8f15647aa91441e70d249f421"
+      "Id": "01df27d3233d4ad98108747a6f4938d3"
     },
     {
       "Start": "8c5d478bfb43425fa9767440cfc89aaf",
       "End": "111e679cda364599890248702dc2e8bb",
       "Id": "bfb6c58b384c4f5fb8c4f89d142f9ec1"
+    },
+    {
+      "Start": "e28131c783d74b3b9402e54969a99456",
+      "End": "fe3ced99d300429b8e19362c630d7efe",
+      "Id": "c8a8cf114497454f8a3e5023447ae412"
+    },
+    {
+      "Start": "aa6e78a0c65c42978776edd552e64566",
+      "End": "b0b0d1e0041a44e09f69e34bb9963369",
+      "Id": "71fbdcce74fb498882e86054efa14cb5"
+    },
+    {
+      "Start": "aa6e78a0c65c42978776edd552e64566",
+      "End": "abb7edddf8eb4ec898ea8b8a0ae61b96",
+      "Id": "3f88b12384fe47fbb0aa338ac4c96dd4"
+    },
+    {
+      "Start": "ffcf1ca3f86543b8abf6579bf80b5c96",
+      "End": "f1b4f2a60d5441f1a9301be11df55761",
+      "Id": "96a039f5e90c424087715fd77b3d6f15"
+    },
+    {
+      "Start": "1e402756eff44d15afd8a5ac61ccc6ce",
+      "End": "32559a3df173425898d21346e2bf01ad",
+      "Id": "213ad20dfdb24e0883e20747f6725418"
+    },
+    {
+      "Start": "707872b6cf74456293fed198d10b382e",
+      "End": "879342dd425b48fd9978538641ba524f",
+      "Id": "6103b81619e0458cbcd0d86ec89f84b1"
     }
   ],
   "Dependencies": [],
@@ -327,8 +521,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 973.22106824925834,
-        "Y": 133.79970326409494
+        "X": 1071.7373887240356,
+        "Y": 98.191394658753723
       },
       {
         "ShowGeometry": true,
@@ -337,8 +531,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 717.93916913946578,
-        "Y": 206.84718100890206
+        "X": 918.53264094955489,
+        "Y": 159.36943620178039
       },
       {
         "ShowGeometry": true,
@@ -347,8 +541,58 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 718.02522255192889,
-        "Y": 49.7166172106825
+        "X": 902.00148367952534,
+        "Y": 15.295252225519334
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List.Map",
+        "Id": "e140d2773e954485b4bfd68950f7c770",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 720.18100890207688,
+        "Y": 305.94955489614227
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "String.Replace",
+        "Id": "39c0a8a5a237410cbe32a8c1772cc99f",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 340.359050445104,
+        "Y": -26.394658753709109
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "String",
+        "Id": "3a985537c16547a6a84be5aee59d63f8",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 239.46884272997033,
+        "Y": -31.142433234421446
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "String",
+        "Id": "2eb1d77a4b304fbe899caf66d2f6ba7e",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 235.90801186943611,
+        "Y": 56.691394658753609
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List.Map",
+        "Id": "ab9ff84000984cf896c17cda003bb08d",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 727.30267062314533,
+        "Y": 136.2166172106825
       }
     ],
     "Annotations": [],
