@@ -36,6 +36,6 @@ and an IfcArbitraryClosedProfileDef made of an IfcPolyline as its profile
 |                | BlenderBIM | FreeCAD                                                      | Revit | ArchiCAD | BricsCAD |
 | -------------- | ---------- | ------------------------------------------------------------ | ----- | -------- | -------- |
 | passed?        |            | yes                                                          |       |          |          |
-| exported file: |            | [result 1.ifc](Specification%20test%20files/Rountrip%20Results/Roundtrip%201%20FreeCAD.ifc) |       |          |          |
-| imported file: |            | [result 1.FCStd](Specification%20test%20files/Rountrip%20Results/Roundtrip%201%20FreeCAD.FCStd) |       |          |          |
+| exported file: |            | [result 1.FCStd](Specification%20test%20files/Rountrip%20Results/Roundtrip%201%20FreeCAD.FCStd) |       |          |          |
+| imported file: |            | [result 1.ifc](Specification%20test%20files/Rountrip%20Results/Roundtrip%201%20FreeCAD.ifc) |       |          |          |
 
