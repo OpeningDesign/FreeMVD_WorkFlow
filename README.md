@@ -7,6 +7,8 @@ Hopefully, in the future, the FreeMVD will become more platform agnostic--applyi
 
 The evolving documentation lives in [BIM Specifications.md](./BIM_Specifications.md).
 
+There is also an ongoing series of tests made to check roundtripping (export to IFC + re-import) on several platforms at [IFC_roundtrip_specifications.md](./IFC_roundtrip_specifications.md)
+
 
 ---
 #### License
