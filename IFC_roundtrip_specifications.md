@@ -41,8 +41,8 @@ made of an IfcPolyline, like the example below:
 |                | BlenderBIM | FreeCAD                                                      | Revit | ArchiCAD | BricsCAD |
 | -------------- | ---------- | ------------------------------------------------------------ | ----- | -------- | -------- |
 | passed?        |            | yes                                                          |       |          |          |
-| exported file: |            | [simple extrusion.ifc](Specification%20test%20files/Roundtrip%20Results/simple%20extrusion.ifc) |       |          |          |
-| imported file: |            | [simple extrusion.FCStd](Specification%20test%20files/Roundtrip%20Results/simple%20extrusion.FCStd) |       |          |          |
+| exported file: |            | [simple extrusion.ifc](Specifications%20test%20files/Roundtrip%20Results/simple%20extrusion.ifc) |       |          |          |
+| imported file: |            | [simple extrusion.FCStd](Specifications%20test%20files/Roundtrip%20Results/simple%20extrusion.FCStd) |       |          |          |
 
 
 
@@ -84,7 +84,7 @@ The application should be able to export and import an IFC file containing three
 |                | BlenderBIM | FreeCAD                                                      | Revit | ArchiCAD | BricsCAD |
 | -------------- | ---------- | ------------------------------------------------------------ | ----- | -------- | -------- |
 | passed?        |            | yes                                                          |       |          |          |
-| exported file: |            | [multipl extrusions.ifc](Specification%20test%20files/Roundtrip%20Results/multiple%20extrusions.ifc) |       |          |          |
-| imported file: |            | [multiple extrusions.FCStd](Specification%20test%20files/Roundtrip%20Results/multiple%20extrusions.FCStd) |       |          |          |
+| exported file: |            | [multiple extrusions.ifc](Specifications%20test%20files/Roundtrip%20Results/multiple%20extrusions.ifc) |       |          |          |
+| imported file: |            | [multiple extrusions.FCStd](Specifications%20test%20files/Roundtrip%20Results/multiple%20extrusions.FCStd) |       |          |          |
 
 
