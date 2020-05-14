@@ -7,6 +7,8 @@ with IFC files. The application should successfully complete all the steps.
 
 The application should be able to export and import an IFC file containing three IfcBuildingElementProxy entities, each with one representation, which is an IfcExtrudedAreaSolid, each based on IfcArbitraryClosedProfileDef made of an IfcPolyline, like the example below. One profile should lie on the XY plane, one in the YZ plane, and a third on a plane made of one of the former rotated 45° along the Y axis. Extrusion directions should be normal to the profiles.
 
+![](https://github.com/OpeningDesign/FreeMVD_WorkFlow/blob/master/Specifications_Test_Files/Extrusions/Extrusions_example.png)
+
 ```
   #20= IFCBUILDINGELEMENTPROXY('0ohBfsArr3ruXYxacT4yl5',#1,'NOTDEFINED',$,$,#2,#21,$,.NOTDEFINED.);
     #21= IFCPRODUCTDEFINITIONSHAPE($,$,(#22));
@@ -38,3 +40,6 @@ The application should be able to export and import an IFC file containing three
 
 #### Results
 [FreeMVD_WorkFlow/Specifications_Test_Files/Extrusions/](https://github.com/OpeningDesign/FreeMVD_WorkFlow/tree/master/Specifications_Test_Files/Extrusions)
+
+* FreeCAD: passed import and export
+* Revit: passed import and export
