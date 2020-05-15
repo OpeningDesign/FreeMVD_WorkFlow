@@ -39,7 +39,11 @@ The application should be able to export and import an IFC file containing three
 * The positions and extrusion directions are correct when the IFC file is viewed with [ifc++](http://ifcquery.com)
 
 #### Results
+
 [FreeMVD_WorkFlow/Specifications_Test_Files/Extrusions/](https://github.com/OpeningDesign/FreeMVD_WorkFlow/tree/master/Specifications_Test_Files/Extrusions)
 
-* FreeCAD: passed import and export
-* Revit: passed import and export
+| Program | Import | Export | Comments                      |
+| ------- | ------ | ------ | ----------------------------- |
+| FreeCAD | PASSED | PASSED |                               |
+| Revit   | PASSED | FAILED | Incorrect extrusion direction |
+|         |        |        |                               |
