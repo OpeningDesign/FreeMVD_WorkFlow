@@ -1,7 +1,17 @@
 # IFC roundtripping specifications
 
-This file lists "exercises" to be performed by a BIM application to achieve adequate round-tripping 
-with IFC files. The application should successfully complete all the steps.
+This file lists "exercises" to be performed by a BIM application to achieve adequate round-tripping with IFC files. The application should successfully complete all the steps.
+
+## File Naming Convensions
+
+| 1 – Original File   | 2 – Exported IFC File    | 3 – Imported Native File   | 4 – Exported IFC File          | 5 – Imported Native File       |
+| ------------------- | ------------------------ | -------------------------- | ------------------------------ | ------------------------------ |
+| Extrusions_01.FCStd | Extrusions_02_PASSED.ifc | Extrusions_03_PASSED.rvt   | Extrusions_04_FAILED_rvt.ifc   | Extrusions_05_FAILED_rvt.rvt   |
+|                     |                          |                            |                                | Extrusions_05_FAILED_rvt.FCStd |
+|                     |                          | Extrusions_03_PASSED.FCStd |                                |                                |
+|                     |                          | Extrusions_03_PASSED.blend | Extrusions_04_PASSED_blend.ifc | Extrusions_05_PASSED_blend.rvt |
+|                     |                          | Extrusions_03_PASSED.pln   | Extrusions_04_PASSED_pln.ifc   | Extrusions_05_PASSED_pln.pln   |
+|                     |                          |                            |                                | Extrusions_05_PASSED_pln.rvt   |
 
 ## 1. Extrusions
 
@@ -49,5 +59,3 @@ Test files here: [FreeMVD_WorkFlow/Specifications_Test_Files/Extrusions/](https:
 | FreeCAD     | PASSED                 | PASSED              |                                                                                                          |
 | Revit       | PASSED                 | FAILED              | - Incorrect extrusion direction <br>- IFCARBITRARYCLOSEDPROFILEDEF was changed to IFCRECTANGLEPROFILEDEF |
 | Vectorworks |                        |                     |                                                                                                          |
-
-
