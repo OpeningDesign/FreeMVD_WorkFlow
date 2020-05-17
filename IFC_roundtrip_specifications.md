@@ -42,10 +42,10 @@ The application should be able to export and import an IFC file containing three
 
 Test files here: [FreeMVD_WorkFlow/Specifications_Test_Files/Extrusions/](https://github.com/OpeningDesign/FreeMVD_WorkFlow/tree/master/Specifications_Test_Files/Extrusions)
 
-| Program     | Import | Export | Comments                      |
-| ----------- | ------ | ------ | ----------------------------- |
-| ArchiCAD    |        |        |                               |
-| BlenderBIM  |        |        |                               |
-| FreeCAD     | PASSED | PASSED |                               |
-| Revit       | PASSED | FAILED | Incorrect extrusion direction |
-| Vectorworks |        |        |                               |
+| Program     | Import | Export | Comments                                                                                                 |
+| ----------- | ------ | ------ | -------------------------------------------------------------------------------------------------------- |
+| ArchiCAD    |        |        |                                                                                                          |
+| BlenderBIM  |        |        |                                                                                                          |
+| FreeCAD     | PASSED | PASSED |                                                                                                          |
+| Revit       | PASSED | FAILED | - Incorrect extrusion direction <br>- IFCARBITRARYCLOSEDPROFILEDEF was changed to IFCRECTANGLEPROFILEDEF |
+| Vectorworks |        |        |                                                                                                          |
