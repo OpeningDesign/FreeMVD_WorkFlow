@@ -2,7 +2,11 @@
 
 This file lists "exercises" to be performed by a BIM application to achieve adequate round-tripping with IFC files. The application should successfully complete all the steps.
 
-## File Naming Convensions
+
+
+---
+
+## File Naming Convension Examples:
 
 | 1 – Original File   | 2 – Exported IFC File    | 3 – Imported Native File   | 4 – Exported IFC File          | 5 – Imported Native File       |
 | ------------------- | ------------------------ | -------------------------- | ------------------------------ | ------------------------------ |
@@ -12,6 +16,14 @@ This file lists "exercises" to be performed by a BIM application to achieve adeq
 |                     |                          | Extrusions_03_PASSED.blend | Extrusions_04_PASSED_blend.ifc | Extrusions_05_PASSED_blend.rvt |
 |                     |                          | Extrusions_03_PASSED.pln   | Extrusions_04_PASSED_pln.ifc   | Extrusions_05_PASSED_pln.pln   |
 |                     |                          |                            |                                | Extrusions_05_PASSED_pln.rvt   |
+
+
+
+---
+
+# Tests
+
+---
 
 ## 1. Extrusions
 
@@ -52,10 +64,10 @@ The application should be able to export and import an IFC file containing three
 
 Test files here: [FreeMVD_WorkFlow/Specifications_Test_Files/Extrusions/](https://github.com/OpeningDesign/FreeMVD_WorkFlow/tree/master/Specifications_Test_Files/Extrusions)
 
-| Program     | 3-Imported Native File | 4-Exported IFC File | Comments                                                                                                 |
-| ----------- | ---------------------- | ------------------- | -------------------------------------------------------------------------------------------------------- |
-| ArchiCAD    |                        |                     |                                                                                                          |
-| BlenderBIM  |                        |                     |                                                                                                          |
-| FreeCAD     | PASSED                 | PASSED              |                                                                                                          |
-| Revit       | PASSED                 | FAILED              | - Incorrect extrusion direction <br>- IFCARBITRARYCLOSEDPROFILEDEF was changed to IFCRECTANGLEPROFILEDEF |
-| Vectorworks |                        |                     |                                                                                                          |
+| Program     | Version<br/>native/plugin | 3-Imported Native File | Import Comments    | 4-Exported IFC File | Export Comments                                                                                          |
+| ----------- | ------------------------- | ---------------------- | ------------------ | ------------------- | -------------------------------------------------------------------------------------------------------- |
+| ArchiCAD    |                           |                        |                    |                     |                                                                                                          |
+| BlenderBIM  | 2.82a/0.200511            | FAILED                 | - imported as mesh | FAILED              | - changed IFCEXTRUDEDAREASOLID to IFCFACETEDBREP w/ IFCFACE                                              |
+| FreeCAD     |                           | PASSED                 |                    | PASSED              |                                                                                                          |
+| Revit       | 2020/20.1.0.1             | PASSED                 |                    | FAILED              | - Incorrect extrusion direction <br>- IFCARBITRARYCLOSEDPROFILEDEF was changed to IFCRECTANGLEPROFILEDEF |
+| Vectorworks |                           |                        |                    |                     |                                                                                                          |
