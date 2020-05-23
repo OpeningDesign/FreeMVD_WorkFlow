@@ -76,7 +76,7 @@ Test files here: [FreeMVD_WorkFlow/Specifications_Test_Files/Extrusions/](https:
 
 Mapped Items, which go by many different names in different BIM apps (a few called out below), are objects where the definition of one object is connected to another.  That is, if one istance is modified, these changes will also be reflected in other connected or linked instances.
 
-![](Specifications_Test_Files\Mapped_Items\imgs\Mapped_Items_Code.png)
+![](Specifications_Test_Files/Mapped_Items/imgs/Mapped_Items_Code.png)
 
 - ArchiCAD
   
@@ -106,7 +106,7 @@ Mapped Items, which go by many different names in different BIM apps (a few call
   
   - Symbols
 
-![](Specifications_Test_Files\Mapped_Items\imgs\Mapped_Items_Visual.gif)
+![](Specifications_Test_Files/Mapped_Items/imgs/Mapped_Items_Visual.gif)
 
 #### Import criteria
 
@@ -116,7 +116,7 @@ Mapped Items, which go by many different names in different BIM apps (a few call
 
 - The IFC file has the same shared mapping connected to the objects--circled in red below.
 
-![](Specifications_Test_Files\Mapped_Items\imgs\Mapped_Items_Code_circled.png)
+![](Specifications_Test_Files/Mapped_Items/imgs/Mapped_Items_Code_circled.png)
 
 | Program     | Version<br/>native/plugin | 3-Imported Native File | Import Comments | 4-Exported IFC File | Export Comments |
 | ----------- | ------------------------- | ---------------------- | --------------- | ------------------- | --------------- |
