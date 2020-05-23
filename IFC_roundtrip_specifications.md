@@ -6,14 +6,14 @@ This file lists "exercises" to be performed by a BIM application to achieve adeq
 
 ## File Naming Convension Examples:
 
-| 1 – Original File   | 2 – Exported IFC File    | 3 – Imported Native File   | 4 – Exported IFC File          | 5 – Imported Native File       |
-| ------------------- | ------------------------ | -------------------------- | ------------------------------ | ------------------------------ |
-| Extrusions_01.FCStd | Extrusions_02_PASSED.ifc | Extrusions_03_PASSED.rvt   | Extrusions_04_FAILED_rvt.ifc   | Extrusions_05_FAILED_rvt.rvt   |
-|                     |                          |                            |                                | Extrusions_05_FAILED_rvt.FCStd |
-|                     |                          | Extrusions_03_PASSED.FCStd |                                |                                |
-|                     |                          | Extrusions_03_PASSED.blend | Extrusions_04_PASSED_blend.ifc | Extrusions_05_PASSED_blend.rvt |
-|                     |                          | Extrusions_03_PASSED.pln   | Extrusions_04_PASSED_pln.ifc   | Extrusions_05_PASSED_pln.pln   |
-|                     |                          |                            |                                | Extrusions_05_PASSED_pln.rvt   |
+| 1 – Original File   | 2 – Exported IFC File  | 3 – Imported Native File | 4 – Exported IFC File        | 5 – Imported Native File     |
+| ------------------- | ---------------------- | ------------------------ | ---------------------------- | ---------------------------- |
+| Extrusions_01.FCStd | Extrusions_02_PASS.ifc | Extrusions_03_PASS.rvt   | Extrusions_04_FAIL_rvt.ifc   | Extrusions_05_FAIL_rvt.rvt   |
+|                     |                        |                          |                              | Extrusions_05_FAIL_rvt.FCStd |
+|                     |                        | Extrusions_03_PASS.FCStd |                              |                              |
+|                     |                        | Extrusions_03_PASS.blend | Extrusions_04_PASS_blend.ifc | Extrusions_05_PASS_blend.rvt |
+|                     |                        | Extrusions_03_PASS.pln   | Extrusions_04_PASS_pln.ifc   | Extrusions_05_PASS_pln.pln   |
+|                     |                        |                          |                              | Extrusions_05_PASS_pln.rvt   |
 
 ---
 
@@ -25,7 +25,7 @@ This file lists "exercises" to be performed by a BIM application to achieve adeq
 
 The application should be able to export and import an IFC file containing three IfcBuildingElementProxy entities, each with one representation, which is an IfcExtrudedAreaSolid, each based on IfcArbitraryClosedProfileDef made of an IfcPolyline, like the example below. One profile should lie on the XY plane, one in the YZ plane, and a third on a plane made of one of the former rotated 45° along the Y axis. Extrusion directions should be normal to the profiles.
 
-![](https://github.com/OpeningDesign/FreeMVD_WorkFlow/blob/master/Specifications_Test_Files/Extrusions/Extrusions_example.png)
+![](Specifications_Test_Files/Extrusions/Extrusions_example.png)
 
 ```
   #20= IFCBUILDINGELEMENTPROXY('0ohBfsArr3ruXYxacT4yl5',#1,'NOTDEFINED',$,$,#2,#21,$,.NOTDEFINED.);
@@ -71,3 +71,57 @@ Test files here: [FreeMVD_WorkFlow/Specifications_Test_Files/Extrusions/](https:
 | FreeCAD     |                           | PASSED                 |                    | PASSED              |                                                                                                          |
 | Revit       | 2020/20.1.0.1             | PASSED                 |                    | FAILED              | - Incorrect extrusion direction <br>- IFCARBITRARYCLOSEDPROFILEDEF was changed to IFCRECTANGLEPROFILEDEF |
 | Vectorworks |                           |                        |                    |                     |                                                                                                          |
+
+## 2. Mapped Items
+
+Mapped Items, which go by many different names in different BIM apps (a few called out below), are objects where the definition of one object is connected to another.  That is, if one istance is modified, these changes will also be reflected in other connected or linked instances.
+
+![](Specifications_Test_Files\Mapped_Items\imgs\Mapped_Items_Code.png)
+
+- ArchiCAD
+  
+  - Objects
+  
+  - Modules
+
+- Blender
+  
+  - Linked Objects
+
+- FreeCAD
+  
+  - Clones
+
+- Revit
+  
+  - Groups
+  
+  - Families
+
+- Microstation
+  
+  - Cells
+
+- Vectorworks
+  
+  - Symbols
+
+![](Specifications_Test_Files\Mapped_Items\imgs\Mapped_Items_Visual.gif)
+
+#### Import criteria
+
+- That the connection or link between objects in still intact.  That is, if one instance is changed, the other instances will change as well.
+
+#### Export criteria
+
+- The IFC file has the same shared mapping connected to the objects--circled in red below.
+
+![](Specifications_Test_Files\Mapped_Items\imgs\Mapped_Items_Code_circled.png)
+
+| Program     | Version<br/>native/plugin | 3-Imported Native File | Import Comments | 4-Exported IFC File | Export Comments |
+| ----------- | ------------------------- | ---------------------- | --------------- | ------------------- | --------------- |
+| ArchiCAD    |                           |                        |                 |                     |                 |
+| BlenderBIM  | 2.82a/0.200511            | PASSED                 |                 | PASSED              |                 |
+| FreeCAD     |                           |                        |                 |                     |                 |
+| Revit       |                           |                        |                 |                     |                 |
+| Vectorworks |                           |                        |                 |                     |                 |
