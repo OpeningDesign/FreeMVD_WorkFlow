@@ -2,8 +2,6 @@
 
 This file lists "exercises" to be performed by a BIM application to achieve adequate round-tripping with IFC files. The application should successfully complete all the steps.
 
-
-
 ---
 
 ## File Naming Convension Examples:
@@ -16,8 +14,6 @@ This file lists "exercises" to be performed by a BIM application to achieve adeq
 |                     |                          | Extrusions_03_PASSED.blend | Extrusions_04_PASSED_blend.ifc | Extrusions_05_PASSED_blend.rvt |
 |                     |                          | Extrusions_03_PASSED.pln   | Extrusions_04_PASSED_pln.ifc   | Extrusions_05_PASSED_pln.pln   |
 |                     |                          |                            |                                | Extrusions_05_PASSED_pln.rvt   |
-
-
 
 ---
 
@@ -57,7 +53,11 @@ The application should be able to export and import an IFC file containing three
 
 #### Export criteria
 
-* The exported IFC file contains three IfcBuildingElementProxy, each with an IfcExtrudedAreaSolid as its representation and an IfcArbitraryClosedProfileDef made of an IfcPolyline as its profile.
+* The exported IFC file contains three 
+  * IfcBuildingElementProxy, each with an 
+    * IfcExtrudedAreaSolid as its representation and an 
+      * IfcArbitraryClosedProfileDef made of an 
+      * IfcPolyline as its profile.
 * The positions and extrusion directions are correct when the IFC file is viewed with [ifc++](http://ifcquery.com)
 
 #### Results
