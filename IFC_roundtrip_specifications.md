@@ -21,7 +21,7 @@ This file lists "exercises" to be performed by a BIM application to achieve adeq
 
 ---
 
-## 1. Extrusions
+## Extrusions
 
 The application should be able to export and import an IFC file containing three IfcBuildingElementProxy entities, each with one representation, which is an IfcExtrudedAreaSolid, each based on IfcArbitraryClosedProfileDef made of an IfcPolyline, like the example below. One profile should lie on the XY plane, one in the YZ plane, and a third on a plane made of one of the former rotated 45° along the Y axis. Extrusion directions should be normal to the profiles.
 
@@ -45,22 +45,32 @@ The application should be able to export and import an IFC file containing three
             #34= IFCCARTESIANPOINT((1000.,0.,2000.));
 ```
 
-#### Import criteria
+#### Native Funtionality
+
+| Program      | Native funtion/object                   |
+| ------------ | --------------------------------------- |
+| ArchiCAD     |                                         |
+| BlenderBIM   |                                         |
+| FreeCAD      |                                         |
+| Microstation |                                         |
+| Revit        | Model-in-Place Family - Solid Extrusion |
+| Vectorworks  |                                         |
+
+### Import criteria
 
 * The extrusion directions and profile positions are correct
 * The extrusions can be changed after import
 * The base polylines can be edited after import
 
-#### Export criteria
+### Export criteria
 
 * The exported IFC file contains three 
   * IfcBuildingElementProxy, each with an 
     * IfcExtrudedAreaSolid as its representation and an 
       * IfcArbitraryClosedProfileDef made of an 
         * IfcPolyline as its profile.
-* The positions and extrusion directions are correct when the IFC file is viewed with [ifc++](http://ifcquery.com)
 
-#### Results
+### Results
 
 Test files here: [FreeMVD_WorkFlow/Specifications_Test_Files/Extrusions/](https://github.com/OpeningDesign/FreeMVD_WorkFlow/tree/master/Specifications_Test_Files/Extrusions)
 
@@ -72,53 +82,36 @@ Test files here: [FreeMVD_WorkFlow/Specifications_Test_Files/Extrusions/](https:
 | Revit       | 2020/20.1.0.1             | PASSED                 |                    | FAILED              | - Incorrect extrusion direction <br>- IFCARBITRARYCLOSEDPROFILEDEF was changed to IFCRECTANGLEPROFILEDEF |
 | Vectorworks |                           |                        |                    |                     |                                                                                                          |
 
-## 2. Mapped Items
+## Mapped Items
 
 Mapped Items, which go by many different names in different BIM apps (a few called out below), are objects where the definition of one object is connected to another.  That is, if one istance is modified, these changes will also be reflected in other connected or linked instances.
 
 ![](Specifications_Test_Files/Mapped_Items/imgs/Mapped_Items_Code.png)
 
-- ArchiCAD
-  
-  - Objects
-  
-  - Modules
+#### Native Funtionality
 
-- Blender
-  
-  - Linked Objects
-
-- FreeCAD
-  
-  - Clones
-
-- Revit
-  
-  - Groups
-  
-  - Families
-
-- Microstation
-  
-  - Cells
-
-- Vectorworks
-  
-  - Symbols
+| Program      | Native funtion/object |
+| ------------ | --------------------- |
+| ArchiCAD     | Objects, Modules      |
+| BlenderBIM   | Linked Objects        |
+| FreeCAD      | Clones                |
+| Microstation | Cells                 |
+| Revit        | Groups, Families      |
+| Vectorworks  | Symbols               |
 
 ![](Specifications_Test_Files/Mapped_Items/imgs/Mapped_Items_Visual.gif)
 
-#### Import criteria
+### Import criteria
 
 - That the connection or link between objects in still intact.  That is, if one instance is changed, the other instances will change as well.
 
-#### Export criteria
+### Export criteria
 
 - The IFC file has the same shared mapping connected to the objects--circled in red below.
 
 ![](Specifications_Test_Files/Mapped_Items/imgs/Mapped_Items_Code_circled.png)
 
-#### Results
+### Results
 
 Test files here: [Specifications_Test_Files/Mapped_Items/](https://github.com/OpeningDesign/FreeMVD_WorkFlow/tree/master/Specifications_Test_Files/Mapped_Items)
 
