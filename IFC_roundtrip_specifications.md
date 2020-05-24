@@ -118,6 +118,10 @@ Mapped Items, which go by many different names in different BIM apps (a few call
 
 ![](Specifications_Test_Files/Mapped_Items/imgs/Mapped_Items_Code_circled.png)
 
+#### Results
+
+Test files here: [Specifications_Test_Files/Mapped_Items/](https://github.com/OpeningDesign/FreeMVD_WorkFlow/tree/master/Specifications_Test_Files/Mapped_Items)
+
 | Program     | Version<br/>native/plugin | 3-Imported Native File | Import Comments                 | 4-Exported IFC File | Export Comments |
 | ----------- | ------------------------- | ---------------------- | ------------------------------- | ------------------- | --------------- |
 | ArchiCAD    |                           |                        |                                 |                     |                 |
