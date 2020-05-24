@@ -74,13 +74,13 @@ The application should be able to export and import an IFC file containing three
 
 Test files here: [FreeMVD_WorkFlow/Specifications_Test_Files/Extrusions/](https://github.com/OpeningDesign/FreeMVD_WorkFlow/tree/master/Specifications_Test_Files/Extrusions)
 
-| Program     | Version<br/>native/plugin | 3-Imported Native File | Import Comments    | 4-Exported IFC File | Export Comments                                                                                          |
-| ----------- | ------------------------- | ---------------------- | ------------------ | ------------------- | -------------------------------------------------------------------------------------------------------- |
-| ArchiCAD    |                           |                        |                    |                     |                                                                                                          |
-| BlenderBIM  | 2.82a/0.200511            | FAILED                 | - imported as mesh | FAILED              | - changed IFCEXTRUDEDAREASOLID to IFCFACETEDBREP w/ IFCFACE                                              |
-| FreeCAD     |                           | PASSED                 |                    | PASSED              |                                                                                                          |
-| Revit       | 2020/20.1.0.1             | PASSED                 |                    | FAILED              | - Incorrect extrusion direction <br>- IFCARBITRARYCLOSEDPROFILEDEF was changed to IFCRECTANGLEPROFILEDEF |
-| Vectorworks |                           |                        |                    |                     |                                                                                                          |
+| Program     | Version<br/>native/plugin | 3-Imported Native File (PASS/FAIL) | Import Comments    | 4-Exported IFC File (PASS/FAIL) | Export Comments                                                                                          |
+| ----------- | ------------------------- | ---------------------------------- | ------------------ | ------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| ArchiCAD    |                           |                                    |                    |                                 |                                                                                                          |
+| BlenderBIM  | 2.82a/0.200511            | :x:                                | - imported as mesh | :x:                             | - changed IFCEXTRUDEDAREASOLID to IFCFACETEDBREP w/ IFCFACE                                              |
+| FreeCAD     |                           | :heavy_check_mark:                 |                    | :heavy_check_mark:              |                                                                                                          |
+| Revit       | 2020/20.1.0.1             | :heavy_check_mark:                 |                    | :x:                             | - Incorrect extrusion direction <br>- IFCARBITRARYCLOSEDPROFILEDEF was changed to IFCRECTANGLEPROFILEDEF |
+| Vectorworks |                           |                                    |                    |                                 |                                                                                                          |
 
 ## Mapped Items
 
@@ -115,10 +115,10 @@ Mapped Items, which go by many different names in different BIM apps (a few call
 
 Test files here: [Specifications_Test_Files/Mapped_Items/](https://github.com/OpeningDesign/FreeMVD_WorkFlow/tree/master/Specifications_Test_Files/Mapped_Items)
 
-| Program     | Version<br/>native/plugin | 3-Imported Native File | Import Comments                 | 4-Exported IFC File | Export Comments |
-| ----------- | ------------------------- | ---------------------- | ------------------------------- | ------------------- | --------------- |
-| ArchiCAD    |                           |                        |                                 |                     |                 |
-| BlenderBIM  | 2.82a/0.200511            | PASSED                 |                                 | PASSED              |                 |
-| FreeCAD     |                           |                        |                                 |                     |                 |
-| Revit       | 2020/20.1.0.1             | FAILED                 | link was broken between objects |                     |                 |
-| Vectorworks |                           |                        |                                 |                     |                 |
+| Program     | Version<br/>native/plugin | 3-Imported Native File (PASS/FAIL) | Import Comments                 | 4-Exported IFC File (PASS/FAIL) | Export Comments |
+| ----------- | ------------------------- | ---------------------------------- | ------------------------------- | ------------------------------- | --------------- |
+| ArchiCAD    |                           |                                    |                                 |                                 |                 |
+| BlenderBIM  | 2.82a/0.200511            | :heavy_check_mark:                 |                                 | :heavy_check_mark:              |                 |
+| FreeCAD     |                           |                                    |                                 |                                 |                 |
+| Revit       | 2020/20.1.0.1             | :x:                                | link was broken between objects |                                 |                 |
+| Vectorworks |                           |                                    |                                 |                                 |                 |
