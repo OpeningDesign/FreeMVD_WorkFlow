@@ -122,3 +122,48 @@ Test files here: [Specifications_Test_Files/Mapped_Items/](https://github.com/Op
 | FreeCAD     |                           |                                    |                                 |                                 |                 |
 | Revit       | 2020/20.1.0.1             | :x:                                | link was broken between objects |                                 |                 |
 | Vectorworks |                           |                                    |                                 |                                 |                 |
+
+
+## Circles and rectangles
+
+The application should be able to export and import an IFC file containing four objects, two extruded rectangles and two extruded circles (four IfcBuildingElementProxy entities, two of them made of an IfcExtrudedAreaSolid of an IfcRectangleProfileDef, and two of an IfcCircleProfileDef). One rectangle and one circle should be placed on the ground XY plane, and one rectangle and one circle in any other arbitrary plane.
+
+![](Specifications_Test_Files/Circles_Rectangles/circles_rectangles.png)
+
+#### Native Funtionality
+
+| Program      | Native funtion/object                   |
+| ------------ | --------------------------------------- |
+| ArchiCAD     |                                         |
+| BlenderBIM   |                                         |
+| FreeCAD      |                                         |
+| Microstation |                                         |
+| Revit        |                                         |
+| Vectorworks  |                                         |
+
+### Import criteria
+
+* The extrusion directions and profile positions are correct
+* The extrusions can be changed after import
+* The height or width of the rectangles can be changed independently after import
+* The radius of the circles can be changed after import
+
+### Export criteria
+
+* The exported IFC file contains four 
+  * IfcBuildingElementProxy, each with an 
+    * IfcExtrudedAreaSolid as its representation, two with an 
+      * IfcRectangleProfileDef and two with an
+      * IfcCircleProfileDef
+
+### Results
+
+Test files here: [FreeMVD_WorkFlow/Specifications_Test_Files/Circles_Rectangles/](https://github.com/OpeningDesign/FreeMVD_WorkFlow/tree/master/Specifications_Test_Files/Circles_Rectangles)
+
+| Program | Version<br/>native/plugin | 3-Imported Native File (PASS/FAIL) | Import Comments | 4-Exported IFC File (PASS/FAIL) | Export Comments |
+| ----------- | --------- | ------------------ | -------- | ------------------ | ---------- |
+| ArchiCAD    |           |                    |          |                    |            |
+| BlenderBIM  |           |                    |          |                    |            |
+| FreeCAD     |           | :heavy_check_mark: |          | :heavy_check_mark: |            |
+| Revit       |           |                    |          |                    |            |
+| Vectorworks |           |                    |          |                    |            |                                                                                            |
