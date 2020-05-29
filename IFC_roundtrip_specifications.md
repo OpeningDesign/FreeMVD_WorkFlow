@@ -119,7 +119,7 @@ Test files here: [Specifications_Test_Files/Mapped_Items/](https://github.com/Op
 | ----------- | ------------------------- | ---------------------------------- | ------------------------------- | ------------------------------- | --------------- |
 | ArchiCAD    |                           |                                    |                                 |                                 |                 |
 | BlenderBIM  | 2.82a/0.200511            | :heavy_check_mark:                 |                                 | :heavy_check_mark:              |                 |
-| FreeCAD     |                           |                                    |                                 |                                 |                 |
+| FreeCAD     |                           | :heavy_check_mark:                 |                    | :heavy_check_mark:              | 
 | Revit       | 2020/20.1.0.1             | :x:                                | link was broken between objects |                                 |                 |
 | Vectorworks |                           |                                    |                                 |                                 |                 |
 
