@@ -21,11 +21,11 @@ This file lists "exercises" to be performed by a BIM application to achieve adeq
 
 ---
 
-## Extrusions
+## Extrusions_Rectangles
 
 The application should be able to export and import an IFC file containing three IfcBuildingElementProxy entities, each with one representation, which is an IfcExtrudedAreaSolid, each based on IfcArbitraryClosedProfileDef made of an IfcPolyline, like the example below. One profile should lie on the XY plane, one in the YZ plane, and a third on a plane made of one of the former rotated 45° along the Y axis. Extrusion directions should be normal to the profiles.
 
-![](Specifications_Test_Files/Extrusions/Extrusions_example.png)
+![](Specifications_Test_Files/Extrusions_Rectangles/from_FreeCAD/Extrusions_Rectangles_example.png)
 
 ```
   #20= IFCBUILDINGELEMENTPROXY('0ohBfsArr3ruXYxacT4yl5',#1,'NOTDEFINED',$,$,#2,#21,$,.NOTDEFINED.);
@@ -72,15 +72,15 @@ The application should be able to export and import an IFC file containing three
 
 ### Results
 
-Test files here: [FreeMVD_WorkFlow/Specifications_Test_Files/Extrusions/](https://github.com/OpeningDesign/FreeMVD_WorkFlow/tree/master/Specifications_Test_Files/Extrusions)
+Test files here: [FreeMVD_WorkFlow/Specifications_Test_Files/Extrusions_Rectangles/](https://github.com/OpeningDesign/FreeMVD_WorkFlow/tree/master/Specifications_Test_Files/Extrusions_Rectangles)
 
-| Program     | Version<br/>native/plugin | 3-Imported Native File (PASS/FAIL) | Import Comments    | 4-Exported IFC File (PASS/FAIL) | Export Comments                                                                                          |
-| ----------- | ------------------------- | ---------------------------------- | ------------------ | ------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| ArchiCAD    |                           |                                    |                    |                                 |                                                                                                          |
-| BlenderBIM  | 2.82a/0.200511            | :x:                                | - imported as mesh | :x:                             | - changed IFCEXTRUDEDAREASOLID to IFCFACETEDBREP w/ IFCFACE                                              |
-| FreeCAD     |                           | :heavy_check_mark:                 |                    | :heavy_check_mark:              |                                                                                                          |
-| Revit       | 2020/20.1.0.1             | :heavy_check_mark:                 |                    | :x:                             | - Incorrect extrusion direction <br>- IFCARBITRARYCLOSEDPROFILEDEF was changed to IFCRECTANGLEPROFILEDEF |
-| Vectorworks |                           |                                    |                    |                                 |                                                                                                          |
+| Program     | Version<br/>native/plugin | Imported Native File (PASS/FAIL) | Import Comments    | Exported IFC File (PASS/FAIL) | Export Comments                                                                                          |
+| ----------- | ------------------------- | -------------------------------- | ------------------ | ----------------------------- | -------------------------------------------------------------------------------------------------------- |
+| ArchiCAD    |                           |                                  |                    |                               |                                                                                                          |
+| BlenderBIM  | 2.82a/0.200511            | :x:                              | - imported as mesh | :x:                           | - changed IFCEXTRUDEDAREASOLID to IFCFACETEDBREP w/ IFCFACE                                              |
+| FreeCAD     |                           | :heavy_check_mark:               |                    | :heavy_check_mark:            |                                                                                                          |
+| Revit       | 2020/20.1.0.1             | :heavy_check_mark:               |                    | :x:                           | - Incorrect extrusion direction <br>- IFCARBITRARYCLOSEDPROFILEDEF was changed to IFCRECTANGLEPROFILEDEF |
+| Vectorworks |                           |                                  |                    |                               |                                                                                                          |
 
 ## Mapped Items
 
@@ -115,20 +115,19 @@ Mapped Items, which go by many different names in different BIM apps (a few call
 
 Test files here: [Specifications_Test_Files/Mapped_Items/](https://github.com/OpeningDesign/FreeMVD_WorkFlow/tree/master/Specifications_Test_Files/Mapped_Items)
 
-| Program     | Version<br/>native/plugin | 3-Imported Native File (PASS/FAIL) | Import Comments                 | 4-Exported IFC File (PASS/FAIL) | Export Comments |
-| ----------- | ------------------------- | ---------------------------------- | ------------------------------- | ------------------------------- | --------------- |
-| ArchiCAD    |                           |                                    |                                 |                                 |                 |
-| BlenderBIM  | 2.82a/0.200511            | :heavy_check_mark:                 |                                 | :heavy_check_mark:              |                 |
-| FreeCAD     |                           | :heavy_check_mark:                 |                    | :heavy_check_mark:              | 
-| Revit       | 2020/20.1.0.1             | :x:                                | link was broken between objects |                                 |                 |
-| Vectorworks |                           |                                    |                                 |                                 |                 |
+| Program     | Version<br/>native/plugin | Imported Native File (PASS/FAIL) | Import Comments                 | Exported IFC File (PASS/FAIL) | Export Comments |
+| ----------- | ------------------------- | -------------------------------- | ------------------------------- | ----------------------------- | --------------- |
+| ArchiCAD    |                           |                                  |                                 |                               |                 |
+| BlenderBIM  | 2.82a/0.200511            | :heavy_check_mark:               |                                 | :heavy_check_mark:            |                 |
+| FreeCAD     |                           | :heavy_check_mark:               |                                 | :heavy_check_mark:            |                 |
+| Revit       | 2020/20.1.0.1             | :x:                              | link was broken between objects |                               |                 |
+| Vectorworks |                           |                                  |                                 |                               |                 |
 
+## Extrusions_Circles
 
-## Circles and rectangles
+The application should be able to export and import an IFC file containing 2 circle extrusions.
 
-The application should be able to export and import an IFC file containing four objects, two extruded rectangles and two extruded circles (four IfcBuildingElementProxy entities, two of them made of an IfcExtrudedAreaSolid of an IfcRectangleProfileDef, and two of an IfcCircleProfileDef). One rectangle and one circle should be placed on the ground XY plane, and one rectangle and one circle in any other arbitrary plane.
-
-![](Specifications_Test_Files/Circles_Rectangles/circles_rectangles.png)
+![](Specifications_Test_Files/Extrusions_Circles/from_Revit/imgs/Extrusions_Circles_01.rvt.png)
 
 #### Native Funtionality
 
@@ -138,32 +137,74 @@ The application should be able to export and import an IFC file containing four 
 | BlenderBIM   |                                         |
 | FreeCAD      |                                         |
 | Microstation |                                         |
-| Revit        |                                         |
+| Revit        | Model-in-Place Family - Solid Extrusion |
 | Vectorworks  |                                         |
 
 ### Import criteria
 
 * The extrusion directions and profile positions are correct
 * The extrusions can be changed after import
-* The height or width of the rectangles can be changed independently after import
 * The radius of the circles can be changed after import
 
 ### Export criteria
 
-* The exported IFC file contains four 
-  * IfcBuildingElementProxy, each with an 
-    * IfcExtrudedAreaSolid as its representation, two with an 
-      * IfcRectangleProfileDef and two with an
-      * IfcCircleProfileDef
+- (2) IFCEXTRUDEDAREASOLIDs with
+  - (1) IFCCIRCLEPROFILEDEF
 
 ### Results
 
-Test files here: [FreeMVD_WorkFlow/Specifications_Test_Files/Circles_Rectangles/](https://github.com/OpeningDesign/FreeMVD_WorkFlow/tree/master/Specifications_Test_Files/Circles_Rectangles)
+Test files here: [FreeMVD_WorkFlow/Specifications_Test_Files/Extrusions_Circles](https://github.com/OpeningDesign/FreeMVD_WorkFlow/tree/master/FreeMVD_WorkFlow/Specifications_Test_Files/Extrusions_Circles)
 
-| Program | Version<br/>native/plugin | 3-Imported Native File (PASS/FAIL) | Import Comments | 4-Exported IFC File (PASS/FAIL) | Export Comments |
-| ----------- | --------- | ------------------ | -------- | ------------------ | ---------- |
-| ArchiCAD    |           |                    |          |                    |            |
-| BlenderBIM  |           |                    |          |                    |            |
-| FreeCAD     |           | :heavy_check_mark: |          | :heavy_check_mark: |            |
-| Revit       |           |                    |          |                    |            |
-| Vectorworks |           |                    |          |                    |            |                                                                                            |
+| Program     | Version<br/>native/plugin | Imported Native File (PASS/FAIL) | Import Comments                      | Exported IFC File (PASS/FAIL) | Export Comments                                                                      |
+| ----------- | ------------------------- | -------------------------------- | ------------------------------------ | ----------------------------- | ------------------------------------------------------------------------------------ |
+| ArchiCAD    |                           |                                  |                                      |                               |                                                                                      |
+| BlenderBIM  |                           |                                  |                                      |                               |                                                                                      |
+| FreeCAD     |                           |                                  |                                      |                               |                                                                                      |
+| Revit       |                           | Partial                          | creates (2) arcs instead of a circle | :heavy_check_mark:            | if native file has (2) arcs as the profile, it still exports as IFCCIRCLEPROFILEDEFs |
+| Vectorworks |                           |                                  |                                      |                               |                                                                                      |
+
+## Extrusions_Arcs
+
+The application should be able to export and import an IFC file containing 2 extrusions with arcs in the profile.
+
+![](Specifications_Test_Files/Extrusions_Arcs/from_Revit/imgs/Extrusions_Arcs_01.rvt.png)
+
+#### Native Funtionality
+
+| Program      | Native funtion/object                   |
+| ------------ | --------------------------------------- |
+| ArchiCAD     |                                         |
+| BlenderBIM   |                                         |
+| FreeCAD      |                                         |
+| Microstation |                                         |
+| Revit        | Model-in-Place Family - Solid Extrusion |
+| Vectorworks  |                                         |
+
+### Import criteria
+
+* The extrusion directions and profile positions are correct
+* The extrusions can be changed after import
+* The radius of the arcs can be changed after import
+
+### Export criteria
+
+- IFCEXTRUDEDAREASOLID
+  - IFCARBITRARYCLOSEDPROFILEDEF
+    - IFCCOMPOSITECURVE
+      - (1) IFCCOMPOSITECURVESEGMENT *(the arc)*
+        - IFCTRIMMEDCURVE
+          - IFCCIRCLE
+      - (4) IFCCOMPOSITECURVESEGMENT *(the straight lines)*
+      - IFCPOLYLINE
+
+### Results
+
+Test files here: [FreeMVD_WorkFlow/Specifications_Test_Files/Arcs](https://github.com/OpeningDesign/FreeMVD_WorkFlow/tree/master/FreeMVD_WorkFlow/Specifications_Test_Files/Extrusions_Arcs)
+
+| Program     | Version<br/>native/plugin | Imported Native File (PASS/FAIL) | Import Comments | Exported IFC File (PASS/FAIL) | Export Comments |
+| ----------- | ------------------------- | -------------------------------- | --------------- | ----------------------------- | --------------- |
+| ArchiCAD    |                           |                                  |                 |                               |                 |
+| BlenderBIM  |                           |                                  |                 |                               |                 |
+| FreeCAD     |                           |                                  |                 |                               |                 |
+| Revit       |                           | :heavy_check_mark:               |                 | :heavy_check_mark:            |                 |
+| Vectorworks |                           |                                  |                 |                               |                 |
