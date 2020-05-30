@@ -120,7 +120,7 @@ Test files here: [Specifications_Test_Files/Mapped_Items/](https://github.com/Op
 | ArchiCAD    |                           |                                  |                                 |                               |                 |
 | BlenderBIM  | 2.82a/0.200511            | :heavy_check_mark:               |                                 | :heavy_check_mark:            |                 |
 | FreeCAD     |                           | :heavy_check_mark:               |                                 | :heavy_check_mark:            |                 |
-| Revit       | 2020/20.1.0.1             | :x:                              | link was broken between objects |                               |                 |
+| Revit       | 2020/20.1.0.1             | :x:                              | link was broken between objects | :x:                           |                 |
 | Vectorworks |                           |                                  |                                 |                               |                 |
 
 ## Extrusions_Circles
@@ -195,7 +195,7 @@ The application should be able to export and import an IFC file containing 2 ext
         - IFCTRIMMEDCURVE
           - IFCCIRCLE
       - (4) IFCCOMPOSITECURVESEGMENT *(the straight lines)*
-      - IFCPOLYLINE
+        - IFCPOLYLINE
 
 ### Results
 
